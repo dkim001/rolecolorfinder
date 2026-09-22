@@ -1,0 +1,421 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>About RoleColorFinder</title>
+<meta name="description" content="RoleColorFinder is a team-dynamics platform built on a patent-pending leadership assessment. Learn what we believe, how the model works, and who builds it.">
+<link rel="icon" href="https://www.rolecolorfinder.com/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Newsreader:opsz,wght@6..72,400;6..72,500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/site.css">
+<style>
+  /* About page only */
+  .pairs-grid { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: 32px; margin-top: 56px; align-items: start; }
+  .matrix-wrap { grid-column: 1 / span 7; margin: 0; }
+  .pairs-grid .hot { grid-column: 9 / span 4; }
+  .hot-foot { margin-top: 12px; font-size: 15px; color: var(--ink-3); }
+  .hot-foot .more { margin-top: 10px; }
+  .patent { margin-top: 14px; font-size: 13px; color: var(--ink-3); }
+  @media (max-width: 1080px) {
+    .matrix-wrap { grid-column: 1 / -1; }
+    .pairs-grid .hot { grid-column: 1 / -1; margin-top: 48px; display: grid; grid-template-columns: repeat(3, 1fr); column-gap: 28px; }
+    .pairs-grid .hot li { border-top: 1px solid var(--ink); }
+    .hot-foot { grid-column: 1 / -1; }
+  }
+  @media (max-width: 860px) { .pairs-grid .hot { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="wrap">
+    <nav class="nav" aria-label="Main">
+      <a class="logo" href="index.html" aria-label="RoleColorFinder home">
+        <img src="https://www.rolecolorfinder.com/uploads/2842bc15-73da-4523-b9c9-228cb076346e.png" alt="RoleColorFinder" width="84" height="30">
+      </a>
+      <ul class="nav-links">
+        <li><a href="teams.html">For teams</a></li>
+        <li><a href="assessment.html">Assessment</a></li>
+        <li><a href="pricing.html">Pricing</a></li>
+        <li><a href="about.html" aria-current="page">About</a></li>
+      </ul>
+      <div class="nav-actions">
+        <a class="signin" href="signin.html">Sign in</a>
+        <a class="btn btn-secondary btn-sm" href="https://app.apollo.io/#/meet/sales">Book a demo</a>
+        <a class="btn btn-primary btn-sm" href="assessment.html">Get started</a>
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open menu">
+          <svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true"><path d="M2 5h14M2 9h14M2 13h14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </button>
+      </div>
+    </nav>
+    <div class="mobile-menu" id="mobile-menu">
+      <a href="teams.html">For teams</a>
+      <a href="assessment.html">Assessment</a>
+      <a href="pricing.html">Pricing</a>
+      <a href="about.html" aria-current="page">About</a>
+      <a href="signin.html">Sign in</a>
+      <a class="btn btn-secondary" href="https://app.apollo.io/#/meet/sales">Book a demo</a>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="wrap">
+      <p class="label">About RoleColorFinder</p>
+      <h1>Every team has a shape. We help leaders see it.</h1>
+
+      <div class="split hero-grid">
+        <div class="hero-copy">
+          <p class="lede">RoleColorFinder is a team-dynamics platform built on a patent-pending leadership assessment. It shows how each person on a team prefers to work, which pairs are likely to grind against each other, and what kind of person the team is missing.</p>
+          <p>It rests on an idea from group psychology: a team needs different things from its leaders at different points in its life. A personality label can’t show you that. A picture of the whole team can.</p>
+        </div>
+
+        <figure class="hero-fig fig" aria-labelledby="fig1-cap">
+          <div class="fig-top"><span><strong>Fig. 1</strong>&ensp;Team shape</span><span>Example team, 8 people</span></div>
+          <div class="people" role="img" aria-label="Eight people: three Executors, two Motivators, three Architects, and an empty seat where a Visionary would be.">
+            <span class="person" style="--c: var(--yellow)"></span>
+            <span class="person" style="--c: var(--yellow)"></span>
+            <span class="person" style="--c: var(--yellow)"></span>
+            <span class="gap"></span>
+            <span class="person" style="--c: var(--red)"></span>
+            <span class="person" style="--c: var(--red)"></span>
+            <span class="gap"></span>
+            <span class="person" style="--c: var(--green)"></span>
+            <span class="person" style="--c: var(--green)"></span>
+            <span class="person" style="--c: var(--green)"></span>
+            <span class="gap"></span>
+            <span class="person empty"></span>
+          </div>
+          <div class="bar" aria-hidden="true">
+            <span style="--c: var(--yellow); --n: 3"></span>
+            <span style="--c: var(--red); --n: 2"></span>
+            <span style="--c: var(--green); --n: 3"></span>
+          </div>
+          <ul class="legend">
+            <li style="--c: var(--yellow)"><i></i>Executor <b>3</b></li>
+            <li style="--c: var(--red)"><i></i>Motivator <b>2</b></li>
+            <li style="--c: var(--green)"><i></i>Architect <b>3</b></li>
+            <li class="none"><i></i>Visionary <b>0</b></li>
+          </ul>
+          <dl class="readout">
+            <div><dt>High-friction pairs</dt><dd>6<small>Motivator × Architect</small></dd></div>
+            <div><dt>Missing style</dt><dd>Visionary</dd></div>
+          </dl>
+          <figcaption id="fig1-cap"><b>Strong on delivery and rigor.</b> With no Visionary, nobody is naturally questioning the plan, so the team will execute it even when it’s wrong.</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- Beliefs -->
+  <section class="section" id="beliefs" aria-labelledby="beliefs-h">
+    <div class="wrap split">
+      <div class="head">
+        <h2 id="beliefs-h">What we believe</h2>
+        <p class="lede">Four ideas shape the assessment, the reports, and every tool we’ve built on top of them.</p>
+      </div>
+      <div class="body">
+        <ol class="numbered">
+          <li>
+            <span class="num">01</span>
+            <h3>Leadership depends on context.</h3>
+            <p>A style that steadies a new team can smother an experienced one. Good leaders adjust to what the team needs right now, so a useful assessment has to show more than a fixed type.</p>
+          </li>
+          <li>
+            <span class="num">02</span>
+            <h3>The pair is where work happens.</h3>
+            <p>Two people can each be excellent and still grind against each other every week. Those patterns are predictable, so we name them and pair each one with a fix.</p>
+          </li>
+          <li>
+            <span class="num">03</span>
+            <h3>Color describes how, not how well.</h3>
+            <p>A RoleColor profile describes how someone works. It is never a score. We look at the shape of a team, never at the worth of the people on it.</p>
+          </li>
+          <li>
+            <span class="num">04</span>
+            <h3>A label is only the start.</h3>
+            <p>Knowing your color is step one. Knowing what it does to the people around you is the point, which is why our reports focus on what to do next.</p>
+          </li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <!-- Profiles -->
+  <section class="section" id="profiles" aria-labelledby="profiles-h">
+    <div class="wrap">
+      <div class="section-intro">
+        <h2 id="profiles-h">Four working styles</h2>
+        <p>The assessment places each person in one of four RoleColor profiles. Each profile describes what someone optimizes for at work, and the blind spot that tends to come with it.</p>
+      </div>
+
+      <div class="profiles">
+        <article class="profile" style="--c: var(--yellow); --ci: var(--yellow-ink)">
+          <div class="swatch"></div>
+          <p class="kicker">Yellow</p>
+          <h3>The Executor</h3>
+          <dl>
+            <dt>Optimizes for</dt><dd>Clear priorities, ownership, and delivery</dd>
+            <dt>Blind spot</dt><dd>Speed can outrun context</dd>
+            <dt>Common among</dt><dd>Founders, builders, product managers</dd>
+          </dl>
+        </article>
+        <article class="profile" style="--c: var(--red); --ci: var(--red-ink)">
+          <div class="swatch"></div>
+          <p class="kicker">Red</p>
+          <h3>The Motivator</h3>
+          <dl>
+            <dt>Optimizes for</dt><dd>People momentum, alignment, and visible energy</dd>
+            <dt>Blind spot</dt><dd>Optimism can outrun structure</dd>
+            <dt>Common among</dt><dd>Speakers, creatives, brand builders</dd>
+          </dl>
+        </article>
+        <article class="profile" style="--c: var(--green); --ci: var(--green-ink)">
+          <div class="swatch"></div>
+          <p class="kicker">Green</p>
+          <h3>The Architect</h3>
+          <dl>
+            <dt>Optimizes for</dt><dd>Logic, quality, and durable systems</dd>
+            <dt>Blind spot</dt><dd>Analysis can delay commitment</dd>
+            <dt>Common among</dt><dd>Analysts, engineers, operators</dd>
+          </dl>
+        </article>
+        <article class="profile" style="--c: var(--blue); --ci: var(--blue-ink)">
+          <div class="swatch"></div>
+          <p class="kicker">Blue</p>
+          <h3>The Visionary</h3>
+          <dl>
+            <dt>Optimizes for</dt><dd>Possibility, pattern recognition, and new ideas</dd>
+            <dt>Blind spot</dt><dd>Ideas can drift without a landing zone</dd>
+            <dt>Common among</dt><dd>Strategists, designers, researchers</dd>
+          </dl>
+        </article>
+      </div>
+      <p class="after"><a class="more" href="assessment.html">Find out which one you are</a></p>
+    </div>
+  </section>
+
+  <!-- Pairings -->
+  <section class="section" id="pairings" aria-labelledby="pairings-h">
+    <div class="wrap">
+      <div class="section-intro">
+        <h2 id="pairings-h">Where pairs collide</h2>
+        <p>Four profiles make ten possible pairings. Each one has a name, a typical way of breaking down, and a fix. Three are rated high-friction.</p>
+      </div>
+
+      <div class="pairs-grid">
+        <figure class="matrix-wrap">
+          <div class="matrix" role="table" aria-label="Friction between each pair of RoleColor profiles">
+            <div role="row" style="display: contents">
+              <span role="columnheader"></span>
+              <span class="h col" role="columnheader" style="--c: var(--yellow)"><i></i>Executor</span>
+              <span class="h col" role="columnheader" style="--c: var(--red)"><i></i>Motivator</span>
+              <span class="h col" role="columnheader" style="--c: var(--green)"><i></i>Architect</span>
+              <span class="h col" role="columnheader" style="--c: var(--blue)"><i></i>Visionary</span>
+            </div>
+            <div role="row" style="display: contents">
+              <span class="h" role="rowheader" style="--c: var(--yellow)"><i></i>Executor</span>
+              <span class="cell low" role="cell"><span class="t">Mirror pair</span><span class="lv">Low</span></span>
+              <span class="cell blank" role="cell"></span><span class="cell blank" role="cell"></span><span class="cell blank" role="cell"></span>
+            </div>
+            <div role="row" style="display: contents">
+              <span class="h" role="rowheader" style="--c: var(--red)"><i></i>Motivator</span>
+              <span class="cell watch" role="cell"><span class="t">Pace trap</span><span class="lv">Watch closely</span></span>
+              <span class="cell low" role="cell"><span class="t">Mirror pair</span><span class="lv">Low</span></span>
+              <span class="cell blank" role="cell"></span><span class="cell blank" role="cell"></span>
+            </div>
+            <div role="row" style="display: contents">
+              <span class="h" role="rowheader" style="--c: var(--green)"><i></i>Architect</span>
+              <span class="cell watch" role="cell"><span class="t">Precision trap</span><span class="lv">Watch closely</span></span>
+              <span class="cell high" role="cell"><span class="t">Speed trap</span><span class="lv">High</span></span>
+              <span class="cell low" role="cell"><span class="t">Mirror pair</span><span class="lv">Low</span></span>
+              <span class="cell blank" role="cell"></span>
+            </div>
+            <div role="row" style="display: contents">
+              <span class="h" role="rowheader" style="--c: var(--blue)"><i></i>Visionary</span>
+              <span class="cell high" role="cell"><span class="t">Direction trap</span><span class="lv">High</span></span>
+              <span class="cell high" role="cell"><span class="t">Authority clash</span><span class="lv">High</span></span>
+              <span class="cell watch" role="cell"><span class="t">Abstraction trap</span><span class="lv">Watch closely</span></span>
+              <span class="cell low" role="cell"><span class="t">Mirror pair</span><span class="lv">Low</span></span>
+            </div>
+          </div>
+          <div class="key" aria-hidden="true">
+            <span><i class="k-high"></i>High friction</span>
+            <span><i class="k-watch"></i>Watch closely</span>
+            <span><i class="k-low"></i>Low friction</span>
+          </div>
+        </figure>
+
+        <ul class="hot">
+          <li>
+            <h3>Direction trap</h3>
+            <p class="who"><i style="--c: var(--yellow)"></i>Executor × <i style="--c: var(--blue)"></i>Visionary</p>
+            <p>Blue keeps improving the idea while Yellow is already trying to ship it. Each sees the other as either premature closure or endless drift.</p>
+          </li>
+          <li>
+            <h3>Speed trap</h3>
+            <p class="who"><i style="--c: var(--red)"></i>Motivator × <i style="--c: var(--green)"></i>Architect</p>
+            <p>Red experiences rigor as delay. Green experiences speed as unforced error. Both believe they are protecting the team from the other.</p>
+          </li>
+          <li>
+            <h3>Authority clash</h3>
+            <p class="who"><i style="--c: var(--red)"></i>Motivator × <i style="--c: var(--blue)"></i>Visionary</p>
+            <p>Blue wants room to reshape the direction. Red wants to move people into alignment quickly. When ownership is fuzzy, meetings turn into a contest.</p>
+          </li>
+          <li class="hot-foot">
+            Inside the platform, the same engine runs against your team’s real roster.<br>
+            <a class="more" href="teams.html">See it on your team</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Research -->
+  <section class="section" id="research" aria-labelledby="research-h">
+    <div class="wrap split">
+      <div class="head">
+        <h2 id="research-h">Grounded in how teams develop</h2>
+      </div>
+      <div class="body">
+        <div class="prose">
+          <p>The diagnostic is designed around Bruce Tuckman’s model of team development, which has shaped how groups are studied and managed for six decades. Tuckman described four stages in 1965, and he and Mary Ann Jensen added a fifth in 1977.<sup><a href="#ref-1" aria-label="Reference 1">1</a>,<a href="#ref-2" aria-label="Reference 2">2</a></sup></p>
+          <p>We combine it with research on contextual and adaptive leadership, which starts from the same premise: what a team needs from its leaders changes as the team changes.</p>
+        </div>
+
+        <ol class="stages">
+          <li><span class="n">01</span><h3>Forming</h3><p>Building connection</p></li>
+          <li><span class="n">02</span><h3>Storming</h3><p>Navigating friction</p></li>
+          <li><span class="n">03</span><h3>Norming</h3><p>Establishing flow</p></li>
+          <li><span class="n">04</span><h3>Performing</h3><p>Doing the best work</p></li>
+          <li><span class="n">05</span><h3>Adjourning</h3><p>Ending with clarity</p></li>
+        </ol>
+
+        <ol class="refs">
+          <li id="ref-1"><span>1.</span><span>Tuckman, B. W. (1965). Developmental sequence in small groups. <cite>Psychological Bulletin</cite>, 63(6), 384–399.</span></li>
+          <li id="ref-2"><span>2.</span><span>Tuckman, B. W., &amp; Jensen, M. A. C. (1977). Stages of small-group development revisited. <cite>Group &amp; Organization Studies</cite>, 2(4), 419–427.</span></li>
+        </ol>
+        <p class="patent">The RoleColor assessment method is patent pending.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- People -->
+  <section class="section" id="people" aria-labelledby="people-h">
+    <div class="wrap split">
+      <div class="head">
+        <h2 id="people-h">The people behind it</h2>
+        <p class="lede">RoleColorFinder is built by a multidisciplinary team with backgrounds in education, psychology, engineering, and organizational design.</p>
+      </div>
+      <div class="body">
+        <ul class="founders">
+          <li class="founder">
+            <img src="https://www.rolecolorfinder.com/images/sanjay-divakar-v2.png" alt="Portrait of Sanjay Divakar" loading="lazy" width="600" height="600">
+            <h3>Sanjay Divakar</h3>
+            <p class="role">Founder &amp; CEO</p>
+            <p class="meta"><span class="chip" style="--c: var(--red)"><i></i>Motivator</span><span>Greenwich, Connecticut</span></p>
+            <a class="more" href="team.html#sanjay-divakar">Read Sanjay’s profile</a>
+          </li>
+          <li class="founder">
+            <img src="https://www.rolecolorfinder.com/images/tristan-beley-new.png" alt="Portrait of Tristan Beley" loading="lazy" width="600" height="600">
+            <h3>Tristan Beley</h3>
+            <p class="role">Co-Founder &amp; CTO</p>
+            <p class="meta"><span class="chip" style="--c: var(--yellow)"><i></i>Executor</span><span>Toronto, Ontario</span></p>
+            <a class="more" href="team.html#tristan-beley">Read Tristan’s profile</a>
+          </li>
+        </ul>
+        <div class="aside">
+          <p>A Motivator and an Executor: by our own model, a Pace-trap pairing and one to watch closely.</p>
+          <a class="more" href="team.html">Meet the full team</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Closing -->
+  <section class="closing" aria-labelledby="closing-h">
+    <div class="wrap">
+      <h2 id="closing-h">Start with yourself, or start with your team.</h2>
+      <div class="paths">
+        <div class="path">
+          <p class="label">For individuals</p>
+          <h3>Find your RoleColor profile</h3>
+          <p>The assessment takes about four minutes. It’s free, and you won’t need a card.</p>
+          <div class="actions">
+            <a class="btn btn-primary" href="assessment.html">Take the free assessment</a>
+            <a class="more" href="pricing.html">Compare reports</a>
+          </div>
+        </div>
+        <div class="path">
+          <p class="label">For teams</p>
+          <h3>Map the whole team</h3>
+          <p>See every working pair, who to hire or promote next, and what a change would do before you make it.</p>
+          <div class="actions">
+            <a class="btn btn-secondary" href="https://app.apollo.io/#/meet/sales">Book a demo</a>
+            <a class="more" href="teams.html">See team pricing</a>
+          </div>
+        </div>
+      </div>
+      <p class="contact-line">Questions? Email <a href="mailto:contact@rolecolorfinder.com">contact@rolecolorfinder.com</a>.</p>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="brand-stripe" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
+  <div class="wrap">
+    <div class="foot">
+      <div class="brand">
+        <a class="logo" href="index.html" aria-label="RoleColorFinder home">
+          <img src="https://www.rolecolorfinder.com/uploads/215460ce-2150-4569-b60c-3a223ce10adf.png" alt="RoleColorFinder" width="84" height="30">
+        </a>
+        <p class="blurb">Team-dynamics software built on a patent-pending leadership assessment.</p>
+      </div>
+      <div>
+        <h4>Assessments</h4>
+        <ul>
+          <li><a href="assessment.html">Free assessment</a></li>
+          <li><a href="pricing.html#premium">Premium report</a></li>
+          <li><a href="pricing.html#pro">Pro report</a></li>
+          <li><a href="https://www.rolecolorfinder.com/career-finder">Career Finder</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Teams</h4>
+        <ul>
+          <li><a href="teams.html">RoleColor for Teams</a></li>
+          <li><a href="teams.html#pricing">Team pricing</a></li>
+          <li><a href="https://app.apollo.io/#/meet/sales">Book a demo</a></li>
+          <li><a href="https://www.rolecolorfinder.com/dashboard">Dashboard</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Company</h4>
+        <ul>
+          <li><a href="about.html">About</a></li>
+          <li><a href="team.html">Team</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="privacy.html">Privacy policy</a></li>
+          <li><a href="terms.html">Terms of service</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 RoleColorFinder</span>
+      <span>Patent pending</span>
+    </div>
+  </div>
+</footer>
+<script src="assets/site.js"></script>
+</body>
+</html>

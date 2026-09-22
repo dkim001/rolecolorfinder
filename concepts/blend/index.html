@@ -1,0 +1,872 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>RoleColorFinder · Know how your team breaks before it does</title>
+<meta name="description" content="RoleColorFinder maps every working relationship on your team, names the friction before it costs you a quarter, and tells you which profile to hire next. Built on a patent-pending leadership assessment.">
+<meta name="theme-color" content="#FFFFFF">
+<script>
+  /* Progressive enhancement: hidden start states only exist under .js. If main.js never finishes, reveal everything. */
+  document.documentElement.classList.add('js');
+  window.setTimeout(function () { if (!window.__blendReady) document.documentElement.classList.add('reveal-all'); }, 2500);
+</script>
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://api.fontshare.com" crossorigin>
+<link rel="preconnect" href="https://cdn.fontshare.com" crossorigin>
+<link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=clash-display@500,600,700&amp;f[]=general-sans@400,500,600&amp;display=swap">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<!-- ============================ HEADER ============================ -->
+<header class="site-header" data-header>
+  <div class="container site-header__inner">
+    <a class="brand" href="index.html" aria-label="RoleColorFinder home">
+      <svg class="brand__mark" viewBox="0 0 32 32" aria-hidden="true" focusable="false">
+        <circle cx="12" cy="12" r="7.6" class="bm bm--y"/>
+        <circle cx="20" cy="12" r="7.6" class="bm bm--r"/>
+        <circle cx="20" cy="20" r="7.6" class="bm bm--g"/>
+        <circle cx="12" cy="20" r="7.6" class="bm bm--b"/>
+      </svg>
+      <span class="brand__word">RoleColorFinder</span>
+    </a>
+    <nav class="nav" aria-label="Main">
+      <ul class="nav__links" data-nav-links>
+        <li><a href="teams.html">For teams</a></li>
+        <li><a href="assessment.html">Assessment</a></li>
+        <li><a href="pricing.html">Pricing</a></li>
+        <li><a href="about.html">About</a></li>
+      </ul>
+    </nav>
+    <div class="header-actions">
+      <a class="link-quiet" href="signin.html">Sign in</a>
+      <a class="btn btn--ghost btn--sm" href="https://app.apollo.io/#/meet/sales">Book a demo</a>
+      <a class="btn btn--ink btn--sm" href="assessment.html">Get started</a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="menu" data-menu-toggle>
+        <span class="menu-toggle__label" data-menu-label>Menu</span>
+        <span class="menu-toggle__icon" aria-hidden="true"><i></i><i></i></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- Mobile menu: a disc that grows out of the menu button -->
+<div class="menu" id="menu" data-menu hidden>
+  <div class="menu__discs" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
+  <nav class="menu__inner" aria-label="Mobile">
+    <ul class="menu__links">
+      <li><a href="teams.html">For teams</a></li>
+      <li><a href="assessment.html">Assessment</a></li>
+      <li><a href="pricing.html">Pricing</a></li>
+      <li><a href="about.html">About</a></li>
+    </ul>
+    <div class="menu__actions">
+      <a class="btn btn--light btn--lg" href="assessment.html">Get started <span class="btn__arrow" aria-hidden="true">→</span></a>
+      <a class="btn btn--outline-light btn--lg" href="https://app.apollo.io/#/meet/sales">Book a demo</a>
+      <a class="menu__signin" href="signin.html">Sign in</a>
+    </div>
+    <p class="menu__note">The free assessment takes about four minutes.</p>
+  </nav>
+</div>
+
+<main id="main">
+
+<!-- ============================ HERO ============================ -->
+<section class="hero" aria-labelledby="hero-title">
+  <div class="container hero__grid">
+    <div class="hero__copy">
+      <h1 class="hero__title" id="hero-title">
+        <span class="line"><span>Know how your</span></span>
+        <span class="line"><span>team breaks</span></span>
+        <span class="line"><span>before it does.</span></span>
+      </h1>
+      <p class="hero__lede reveal">RoleColorFinder maps every working relationship on your team, names the friction before it costs you a quarter, and tells you which profile to hire next.</p>
+      <div class="hero__actions reveal">
+        <a class="btn btn--ink btn--lg" href="teams.html">See it on your team
+          <svg class="mixglyph" viewBox="0 0 30 16" aria-hidden="true" focusable="false"><circle cx="8" cy="8" r="6.5"/><circle cx="22" cy="8" r="6.5"/></svg>
+        </a>
+        <a class="btn btn--ghost btn--lg" href="assessment.html">Take the free assessment <span class="btn__arrow" aria-hidden="true">→</span></a>
+      </div>
+      <p class="hero__note reveal">The individual assessment is free: 10 questions, about 4 minutes, no card.</p>
+    </div>
+
+    <div class="hero__stage" data-hero>
+      <div class="hero__canvas">
+        <svg class="hero__svg" viewBox="0 0 800 800" aria-hidden="true" focusable="false">
+          <g class="hero__discs">
+            <circle data-hd="Yellow" class="fill-y" cx="308" cy="303" r="172"/>
+            <circle data-hd="Red" class="fill-r" cx="557" cy="289" r="160"/>
+            <circle data-hd="Green" class="fill-g" cx="555" cy="518" r="156"/>
+            <circle data-hd="Blue" class="fill-b" cx="313" cy="513" r="166"/>
+          </g>
+          <g class="hero__leaders" data-hero-leaders></g>
+        </svg>
+        <div class="hero__labels" data-hero-labels aria-hidden="true">
+          <div class="pair-tag is-static" style="left:30%;top:88%">
+            <span class="pair-tag__name">Direction trap</span>
+            <span class="pair-tag__meta">Executor × Visionary · High friction</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ STORY (sticky scroll) ============================ -->
+<section class="story" id="story" aria-labelledby="story-title" data-story>
+  <div class="container">
+    <header class="section-head">
+      <h2 class="h2" id="story-title" data-split>Every personality test stops at the person. We keep going.</h2>
+    </header>
+
+    <div class="story__grid">
+      <div class="story__steps">
+        <article class="story-step" data-story-step="0">
+          <h3 class="h3">Knowing your color is step one.</h3>
+          <p>Ten questions give you a straight read on how you lead, decide and adapt. Your report ranks all four colors, not just the winner, including the one you barely use. That shadow is usually where friction with other people starts.</p>
+          <a class="text-link" href="assessment.html">Take the free assessment <span aria-hidden="true">→</span></a>
+        </article>
+        <article class="story-step" data-story-step="1">
+          <h3 class="h3">Knowing what it does to the people around you is the point.</h3>
+          <p>Two people can each be excellent and still grind against each other every week. The pattern is predictable, so we predict it: four profiles make ten pairings, and every one has a name, a failure mode and a fix.</p>
+          <a class="text-link" href="#engine">Try the friction engine <span aria-hidden="true">→</span></a>
+        </article>
+        <article class="story-step" data-story-step="2">
+          <h3 class="h3">Map everyone and the shape shows itself.</h3>
+          <p>What the team is strong in. Which pairs will grind under a deadline. And the color nobody in the room carries, which is usually the hire you actually need.</p>
+          <a class="text-link" href="#builder">Build a team <span aria-hidden="true">→</span></a>
+        </article>
+      </div>
+
+      <div class="story__stage-wrap">
+        <div class="story__stage" data-story-stage aria-hidden="true">
+          <svg class="story__svg" viewBox="0 0 600 600" focusable="false">
+            <g class="story__discs">
+              <!-- static (no-JS) state = the whole team; JS choreographs from one person to a team -->
+              <g data-sd="0" class="sd fill-y"><circle class="sd__f" cx="200" cy="245" r="64"/><circle class="sd__r" cx="200" cy="245" r="64"/></g>
+              <g data-sd="1" class="sd fill-r"><circle class="sd__f" cx="400" cy="245" r="64"/><circle class="sd__r" cx="400" cy="245" r="64"/></g>
+              <g data-sd="2" class="sd fill-g"><circle class="sd__f" cx="450" cy="332" r="64"/><circle class="sd__r" cx="450" cy="332" r="64"/></g>
+              <g data-sd="3" class="sd fill-b"><circle class="sd__f" cx="300" cy="436" r="64" style="fill-opacity:0"/><circle class="sd__r" cx="300" cy="436" r="64" style="stroke-opacity:1"/></g>
+              <g data-sd="4" class="sd fill-y"><circle class="sd__f" cx="300" cy="245" r="64"/><circle class="sd__r" cx="300" cy="245" r="64"/></g>
+              <g data-sd="5" class="sd fill-y"><circle class="sd__f" cx="150" cy="332" r="64"/><circle class="sd__r" cx="150" cy="332" r="64"/></g>
+              <g data-sd="6" class="sd fill-y"><circle class="sd__f" cx="250" cy="332" r="64"/><circle class="sd__r" cx="250" cy="332" r="64"/></g>
+              <g data-sd="7" class="sd fill-r"><circle class="sd__f" cx="350" cy="332" r="64"/><circle class="sd__r" cx="350" cy="332" r="64"/></g>
+            </g>
+            <g class="story__lines">
+              <path class="sl sl--1" d="M300 179 V 118" />
+            </g>
+          </svg>
+          <div class="story__labels">
+            <p class="slab slab--center sl--0" style="left:50%;top:37.5%"><b>Executor</b>your dominant color</p>
+            <p class="slab sl--0" style="left:25%;top:86%"><b>Motivator</b>secondary</p>
+            <p class="slab sl--0" style="left:50%;top:86%"><b>Architect</b>third</p>
+            <p class="slab sl--0" style="left:75%;top:86%"><b>Visionary</b>your shadow</p>
+            <p class="slab slab--callout sl--1" style="left:50%;top:19.6%"><b>Direction trap</b>Executor × Visionary · high friction</p>
+            <p class="slab sl--1" style="left:29.2%;top:74.5%"><b>Executor</b>ships the plan</p>
+            <p class="slab sl--1" style="left:70.8%;top:74.5%"><b>Visionary</b>improves the plan</p>
+            <p class="slab slab--metric sl--2" style="left:4%;top:5%"><b>52<small>/100</small></b>balance score</p>
+            <p class="slab slab--metric slab--right sl--2" style="left:96%;top:5%"><b>2</b>high-friction pairs</p>
+            <p class="slab slab--callout slab--below sl--2" style="left:50%;top:85.4%"><b>The gap</b>No Visionary. Nobody questions the plan.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ PROFILES ============================ -->
+<section class="profiles" id="profiles" aria-labelledby="profiles-title">
+  <div class="container">
+    <header class="section-head section-head--split">
+      <div>
+        <h2 class="h2" id="profiles-title" data-split>Four colors. None of them is the good one.</h2>
+      </div>
+      <p class="section-lede reveal">Each is the reason someone is exceptional at part of the job and genuinely hard work in another part. Color describes how people work, not how well, which is why every report ranks all four.</p>
+    </header>
+
+    <ol class="profiles__row" data-profiles>
+      <li class="profile" data-color="Yellow">
+        <div class="profile__disc fill-y"><span class="profile__color">Yellow</span></div>
+        <h3 class="profile__name">The Executor</h3>
+        <p class="profile__line">Closes the gap between deciding and doing. The person a stalled project gets handed to.</p>
+        <dl class="profile__facts">
+          <div><dt>Optimizes for</dt><dd>Clear priorities, ownership and delivery</dd></div>
+          <div><dt>Brings</dt><dd>Follow-through, sequencing, accountability</dd></div>
+          <div><dt>Blind spot</dt><dd>Speed can outrun context</dd></div>
+          <div><dt>Common among</dt><dd>Founders, builders, PMs</dd></div>
+        </dl>
+      </li>
+      <li class="profile" data-color="Red">
+        <div class="profile__disc fill-r"><span class="profile__color">Red</span></div>
+        <h3 class="profile__name">The Motivator</h3>
+        <p class="profile__line">Moves people first and plans second. Makes a team believe the work is worth doing.</p>
+        <dl class="profile__facts">
+          <div><dt>Optimizes for</dt><dd>People momentum, alignment and visible energy</dd></div>
+          <div><dt>Brings</dt><dd>Social energy, urgency, buy-in</dd></div>
+          <div><dt>Blind spot</dt><dd>Optimism can outrun structure</dd></div>
+          <div><dt>Common among</dt><dd>Speakers, creatives, brand builders</dd></div>
+        </dl>
+      </li>
+      <li class="profile" data-color="Green">
+        <div class="profile__disc fill-g"><span class="profile__color">Green</span></div>
+        <h3 class="profile__name">The Architect</h3>
+        <p class="profile__line">Builds the structure everyone else quietly relies on. Wants order that survives scrutiny.</p>
+        <dl class="profile__facts">
+          <div><dt>Optimizes for</dt><dd>Logic, quality and durable systems</dd></div>
+          <div><dt>Brings</dt><dd>Rigor, precision, thoughtful tradeoffs</dd></div>
+          <div><dt>Blind spot</dt><dd>Analysis can delay commitment</dd></div>
+          <div><dt>Common among</dt><dd>Analysts, engineers, operators</dd></div>
+        </dl>
+      </li>
+      <li class="profile" data-color="Blue">
+        <div class="profile__disc fill-b"><span class="profile__color">Blue</span></div>
+        <h3 class="profile__name">The Visionary</h3>
+        <p class="profile__line">Questions the problem before solving it. Reliably asks the thing nobody else asked.</p>
+        <dl class="profile__facts">
+          <div><dt>Optimizes for</dt><dd>Possibility, pattern recognition and innovation</dd></div>
+          <div><dt>Brings</dt><dd>New angles, reframing, future-state thinking</dd></div>
+          <div><dt>Blind spot</dt><dd>Ideas can drift without a landing zone</dd></div>
+          <div><dt>Common among</dt><dd>Strategists, designers, researchers</dd></div>
+        </dl>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- ============================ FRICTION ENGINE ============================ -->
+<section class="engine-section" id="engine" aria-labelledby="engine-title">
+  <div class="container">
+    <header class="section-head section-head--split">
+      <div>
+        <h2 class="h2" id="engine-title" data-split>Pick any two people. See what happens between them.</h2>
+      </div>
+      <p class="section-lede reveal">Four profiles make ten pairings. Each one has a name, a way it fails and a fix. This isn’t a mockup: it’s the same engine running inside the product, pointed at two example profiles instead of your roster.</p>
+    </header>
+
+    <div class="engine panel reveal" data-engine>
+      <div class="engine__left">
+        <div class="engine__pickers">
+          <fieldset class="picker" data-picker="a">
+            <legend class="picker__legend">First person</legend>
+            <div class="picker__opts">
+              <label class="pick"><input type="radio" name="pa" value="Yellow" checked><span class="pick__disc fill-y" aria-hidden="true"></span><span class="pick__name">Executor</span></label>
+              <label class="pick"><input type="radio" name="pa" value="Red"><span class="pick__disc fill-r" aria-hidden="true"></span><span class="pick__name">Motivator</span></label>
+              <label class="pick"><input type="radio" name="pa" value="Green"><span class="pick__disc fill-g" aria-hidden="true"></span><span class="pick__name">Architect</span></label>
+              <label class="pick"><input type="radio" name="pa" value="Blue"><span class="pick__disc fill-b" aria-hidden="true"></span><span class="pick__name">Visionary</span></label>
+            </div>
+          </fieldset>
+          <fieldset class="picker" data-picker="b">
+            <legend class="picker__legend">Second person</legend>
+            <div class="picker__opts">
+              <label class="pick"><input type="radio" name="pb" value="Yellow"><span class="pick__disc fill-y" aria-hidden="true"></span><span class="pick__name">Executor</span></label>
+              <label class="pick"><input type="radio" name="pb" value="Red"><span class="pick__disc fill-r" aria-hidden="true"></span><span class="pick__name">Motivator</span></label>
+              <label class="pick"><input type="radio" name="pb" value="Green"><span class="pick__disc fill-g" aria-hidden="true"></span><span class="pick__name">Architect</span></label>
+              <label class="pick"><input type="radio" name="pb" value="Blue" checked><span class="pick__disc fill-b" aria-hidden="true"></span><span class="pick__name">Visionary</span></label>
+            </div>
+          </fieldset>
+        </div>
+
+        <div class="engine__stage" data-engine-stage data-risk="high">
+          <svg class="engine__svg" viewBox="0 0 560 300" aria-hidden="true" focusable="false">
+            <g class="engine__tension" data-tension>
+              <path class="tension__spring" d="M256 150 l6 -10 l8 20 l8 -20 l8 20 l8 -20 l8 20 l6 -10"/>
+              <path class="tension__arrow" d="M244 130 l-10 0 m4 -4 l-4 4 l4 4"/>
+              <path class="tension__arrow" d="M316 130 l10 0 m-4 -4 l4 4 l-4 4"/>
+            </g>
+            <circle class="engine__disc fill-y" data-disc="a" cx="148" cy="150" r="108"/>
+            <circle class="engine__disc fill-b" data-disc="b" cx="412" cy="150" r="108"/>
+            <circle class="engine__lens-ring" data-lens-ring cx="280" cy="150" r="0"/>
+          </svg>
+          <p class="engine__encoding" data-encoding><span class="enc-glyph enc-glyph--high" aria-hidden="true"></span><span data-encoding-text>They repel. Under pressure, a tension gap opens between them.</span></p>
+        </div>
+
+      </div>
+
+      <div class="engine__right">
+        <div class="chip" data-chip style="--chip:#3B643A;--chip-ink:#fff">
+          <div class="chip__top">
+            <p class="chip__pair" data-pair-label>Executor × Visionary</p>
+            <p class="risk risk--high" data-risk-tag><span class="risk__glyph" aria-hidden="true"></span><span data-risk-text>High friction</span></p>
+          </div>
+          <h3 class="chip__name" data-pair-name>Direction trap</h3>
+        </div>
+        <p class="sr-only" aria-live="polite" data-engine-live></p>
+        <div class="engine__copy" data-engine-copy>
+          <p class="engine__summary" data-summary>Blue keeps expanding the horizon while Yellow wants a stable target and a sequence to execute.</p>
+          <p class="engine__why" data-why>Blue often improves the idea while Yellow is already trying to ship it. Each person experiences the other as either premature closure or endless drift.</p>
+        </div>
+      </div>
+
+      <div class="engine__index">
+        <p class="engine__index-h">All ten pairings</p>
+        <div class="pairindex" data-pairindex></div>
+      </div>
+
+      <div class="engine__lists" data-engine-lists>
+        <div class="elist elist--good">
+          <h4 class="elist__h"><span class="elist__glyph" aria-hidden="true"></span>Good together</h4>
+          <ul data-strengths>
+            <li>This pair can turn bold ideas into real execution when handoffs are explicit.</li>
+            <li>Blue helps Yellow avoid narrow thinking; Yellow helps Blue avoid vapor.</li>
+            <li>They are strong in zero-to-one work that still needs disciplined delivery.</li>
+          </ul>
+        </div>
+        <div class="elist elist--break">
+          <h4 class="elist__h"><span class="elist__glyph" aria-hidden="true"></span>Where it breaks</h4>
+          <ul data-watchouts>
+            <li>Priorities can keep changing once Yellow has already committed resources.</li>
+            <li>Blue may feel constrained too early, while Yellow feels rework piling up.</li>
+            <li>Trust drops when promise dates move without a shared reset.</li>
+          </ul>
+        </div>
+        <div class="elist elist--do">
+          <h4 class="elist__h"><span class="elist__glyph" aria-hidden="true"></span>What to do</h4>
+          <ol data-actions>
+            <li>Separate idea generation from execution commitment in the workflow.</li>
+            <li>Agree on the version that is shipping now versus ideas parked for later.</li>
+            <li>Use written change logs when scope shifts.</li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ TEAM BUILDER ============================ -->
+<section class="builder-section" id="builder" aria-labelledby="builder-title">
+  <div class="container">
+    <header class="section-head section-head--split">
+      <div>
+        <h2 class="h2" id="builder-title" data-split>Most teams hire a résumé. Hire the gap instead.</h2>
+      </div>
+      <p class="section-lede reveal">A team of brilliant executors still misses what nobody in the room is built to see. Change the mix and watch the cost of the gap get named.</p>
+    </header>
+
+    <div class="builder panel reveal" data-builder>
+      <div class="builder__controls">
+        <div class="builder__metrics">
+          <div class="metric metric--score">
+            <p class="metric__label">Balance score</p>
+            <p class="metric__value"><span data-score>52</span><span class="metric__unit">/100</span></p>
+            <div class="meter" aria-hidden="true"><span class="meter__fill" data-meter style="--v:.52"></span><span class="meter__ticks"></span></div>
+          </div>
+          <div class="metric metric--friction">
+            <p class="metric__label">High-friction pairs</p>
+            <p class="metric__value"><span data-friction>2</span></p>
+            <p class="metric__foot" data-friction-list>Speed trap ×2</p>
+          </div>
+        </div>
+        <p class="builder__label">Build a team: <span data-total>7</span> people</p>
+        <ul class="steppers">
+          <li class="stepper" data-color="Yellow">
+            <span class="stepper__disc fill-y" aria-hidden="true"></span>
+            <span class="stepper__text"><span class="stepper__name">Executor</span></span>
+            <span class="stepper__ctrl">
+              <button class="stepper__btn" type="button" data-delta="-1" aria-label="Remove an Executor"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10"/></svg></button>
+              <output class="stepper__count" data-count aria-label="Executors">4</output>
+              <button class="stepper__btn" type="button" data-delta="1" aria-label="Add an Executor"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M8 3v10"/></svg></button>
+            </span>
+          </li>
+          <li class="stepper" data-color="Red">
+            <span class="stepper__disc fill-r" aria-hidden="true"></span>
+            <span class="stepper__text"><span class="stepper__name">Motivator</span></span>
+            <span class="stepper__ctrl">
+              <button class="stepper__btn" type="button" data-delta="-1" aria-label="Remove a Motivator"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10"/></svg></button>
+              <output class="stepper__count" data-count aria-label="Motivators">2</output>
+              <button class="stepper__btn" type="button" data-delta="1" aria-label="Add a Motivator"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M8 3v10"/></svg></button>
+            </span>
+          </li>
+          <li class="stepper" data-color="Green">
+            <span class="stepper__disc fill-g" aria-hidden="true"></span>
+            <span class="stepper__text"><span class="stepper__name">Architect</span></span>
+            <span class="stepper__ctrl">
+              <button class="stepper__btn" type="button" data-delta="-1" aria-label="Remove an Architect"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10"/></svg></button>
+              <output class="stepper__count" data-count aria-label="Architects">1</output>
+              <button class="stepper__btn" type="button" data-delta="1" aria-label="Add an Architect"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M8 3v10"/></svg></button>
+            </span>
+          </li>
+          <li class="stepper" data-color="Blue">
+            <span class="stepper__disc fill-b" aria-hidden="true"></span>
+            <span class="stepper__text"><span class="stepper__name">Visionary</span></span>
+            <span class="stepper__ctrl">
+              <button class="stepper__btn" type="button" data-delta="-1" aria-label="Remove a Visionary"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10"/></svg></button>
+              <output class="stepper__count" data-count aria-label="Visionaries">0</output>
+              <button class="stepper__btn" type="button" data-delta="1" aria-label="Add a Visionary"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M8 3v10"/></svg></button>
+            </span>
+          </li>
+        </ul>
+
+        <div class="nexthire">
+          <p class="nexthire__h">One hire from now</p>
+          <ul class="deltas" data-deltas>
+            <li><button class="delta" type="button" data-add="Yellow"><span class="delta__disc fill-y" aria-hidden="true"></span><span class="delta__name">+1 Executor</span><span class="delta__v is-down" data-dv>−2</span></button></li>
+            <li><button class="delta" type="button" data-add="Red"><span class="delta__disc fill-r" aria-hidden="true"></span><span class="delta__name">+1 Motivator</span><span class="delta__v is-down" data-dv>−2</span></button></li>
+            <li><button class="delta" type="button" data-add="Green"><span class="delta__disc fill-g" aria-hidden="true"></span><span class="delta__name">+1 Architect</span><span class="delta__v is-up" data-dv>+15</span></button></li>
+            <li><button class="delta is-best" type="button" data-add="Blue"><span class="delta__disc fill-b" aria-hidden="true"></span><span class="delta__name">+1 Visionary</span><span class="delta__v is-up" data-dv>+15</span></button></li>
+          </ul>
+          <p class="nexthire__best" data-best>Best next hire: <strong>Visionary</strong> (new angles, reframing, and future-state thinking).</p>
+        </div>
+      </div>
+
+      <div class="builder__viz">
+        <div class="builder__stage">
+          <svg class="cluster" data-cluster viewBox="0 0 520 400" aria-hidden="true" focusable="false">
+            <g data-cluster-gaps></g>
+            <g data-cluster-discs>
+              <circle class="fill-y" cx="205" cy="160" r="52"/><circle class="fill-y" cx="285" cy="160" r="52"/>
+              <circle class="fill-y" cx="165" cy="230" r="52"/><circle class="fill-y" cx="245" cy="230" r="52"/>
+              <circle class="fill-r" cx="365" cy="160" r="52"/><circle class="fill-r" cx="325" cy="230" r="52"/>
+              <circle class="fill-g" cx="285" cy="300" r="52"/>
+            </g>
+            <g data-cluster-labels></g>
+          </svg>
+        </div>
+        <div class="composition" data-composition>
+          <div class="composition__bar" aria-hidden="true">
+            <span class="fill-y" style="flex-grow:4"></span><span class="fill-r" style="flex-grow:2"></span><span class="fill-g" style="flex-grow:1"></span><span class="fill-b" style="flex-grow:0"></span>
+          </div>
+          <ul class="composition__legend">
+            <li><span class="swatch-dot fill-y" aria-hidden="true"></span>Executor <b data-pct="Yellow">57%</b></li>
+            <li><span class="swatch-dot fill-r" aria-hidden="true"></span>Motivator <b data-pct="Red">29%</b></li>
+            <li><span class="swatch-dot fill-g" aria-hidden="true"></span>Architect <b data-pct="Green">14%</b></li>
+            <li><span class="swatch-dot fill-b" aria-hidden="true"></span>Visionary <b data-pct="Blue">0%</b></li>
+          </ul>
+        </div>
+        <p class="builder__summary" data-summary>57% Executor: execution-heavy. This group will move fast and close things out, but is likely to commit before the problem is fully framed and to under-invest in the structure that keeps it from recurring.</p>
+      </div>
+
+      <div class="costs">
+        <p class="costs__h">What this costs you</p>
+        <ul class="costs__list" data-insights>
+          <li class="insight">
+            <p class="insight__level">Watch</p>
+            <h4 class="insight__title">Execution-heavy (57% Executor)</h4>
+            <p class="insight__detail">This group will move fast and close things out, but is likely to commit before the problem is fully framed and to under-invest in the structure that keeps it from recurring.</p>
+            <p class="insight__fix"><b>Fix</b> Add Architect (Green) capability, or make one person accountable for the problem statement before work starts.</p>
+          </li>
+          <li class="insight">
+            <p class="insight__level">Gap</p>
+            <h4 class="insight__title">No Visionary</h4>
+            <p class="insight__detail">Nobody is naturally questioning the framing. This team will execute the plan it was given, including when the plan is wrong.</p>
+            <p class="insight__fix"><b>Fix</b> Hire or move in a Blue, or bring an outside perspective into planning.</p>
+          </li>
+          <li class="insight">
+            <p class="insight__level">Watch</p>
+            <h4 class="insight__title">2 high-friction pairs</h4>
+            <p class="insight__detail">Some people on this team have working styles that reliably grind against each other on shared work: Speed trap ×2.</p>
+            <p class="insight__fix"><b>Fix</b> Open each pairing in the friction engine and agree on its fix before the next deadline.</p>
+          </li>
+        </ul>
+      </div>
+      <p class="sr-only" aria-live="polite" data-builder-live></p>
+    </div>
+
+    <p class="builder-foot reveal">Inside the portal this runs against your real roster, and you can simulate a hire, a transfer or a departure before you commit to it. <a class="text-link" href="teams.html">Run this on your team <span aria-hidden="true">→</span></a></p>
+  </div>
+</section>
+
+<!-- ============================ PLATFORM ============================ -->
+<section class="platform" id="platform" aria-labelledby="platform-title">
+  <div class="container">
+    <header class="section-head section-head--split">
+      <div>
+        <h2 class="h2" id="platform-title" data-split>The assessment is the front door. Not the product.</h2>
+      </div>
+      <p class="section-lede reveal">Behind it sits a platform that turns every profile on your team into decisions: who works well together, who to hire, who is ready to lead, and what changes if someone leaves. The product views below use sample data.</p>
+    </header>
+
+    <div class="features" data-features>
+      <ol class="features__list">
+        <li class="feature is-active" data-feature>
+          <button class="feature__head" type="button" aria-expanded="true" data-feature-btn>
+            <span class="feature__progress" aria-hidden="true"></span><span class="feature__name">Friction Map</span>
+          </button>
+          <div class="feature__body"><div class="feature__body-inner">
+            <p class="feature__lead">Every pairing on your team, ranked by risk.</p>
+            <p>We build the pairs that actually work together, based on overlapping functions rather than everyone against everyone, rank them by predicted friction and attach the fix to each one.</p>
+          </div></div>
+          <div class="feature__visual" aria-hidden="true">
+            <div class="fv-discs"><i class="fill-b" style="--s:360px;--r:-120px;--t:-140px;--from:translate(60px,-40px)"></i><i class="fill-y" style="--s:260px;--l:-90px;--b:-110px;--from:translate(-50px,40px)"></i></div>
+            <div class="ui">
+              <div class="ui__bar"><span class="ui__title">Friction Map</span></div>
+              <ol class="ui-rank">
+                <li><span class="pairglyph"><i class="fill-y"></i><i class="fill-b"></i></span><span class="ui-rank__name">Direction trap<small>Executor × Visionary</small></span><span class="rchip rchip--high">High</span></li>
+                <li><span class="pairglyph"><i class="fill-r"></i><i class="fill-g"></i></span><span class="ui-rank__name">Speed trap<small>Motivator × Architect</small></span><span class="rchip rchip--high">High</span></li>
+                <li><span class="pairglyph"><i class="fill-y"></i><i class="fill-r"></i></span><span class="ui-rank__name">Pace trap<small>Executor × Motivator</small></span><span class="rchip">Watch</span></li>
+                <li><span class="pairglyph"><i class="fill-y"></i><i class="fill-g"></i></span><span class="ui-rank__name">Precision trap<small>Executor × Architect</small></span><span class="rchip">Watch</span></li>
+              </ol>
+              <p class="ui-fix"><b>Fix for Direction trap</b>Separate idea generation from execution commitment in the workflow.</p>
+            </div>
+          </div>
+        </li>
+
+        <li class="feature" data-feature>
+          <button class="feature__head" type="button" aria-expanded="false" data-feature-btn>
+            <span class="feature__progress" aria-hidden="true"></span><span class="feature__name">Who to hire</span>
+          </button>
+          <div class="feature__body"><div class="feature__body-inner">
+            <p class="feature__lead">Describe the problem. Get the role and the color.</p>
+            <p>Write what is going wrong in plain language. The answer is weighed against your real composition, and it will tell you not to hire when a reshuffle would do.</p>
+          </div></div>
+          <div class="feature__visual" aria-hidden="true">
+            <div class="fv-discs"><i class="fill-y" style="--s:380px;--l:-140px;--t:-150px;--from:translate(-60px,-40px)"></i><i class="fill-r" style="--s:220px;--r:-70px;--b:-90px;--from:translate(40px,40px)"></i></div>
+            <div class="ui">
+              <div class="ui__bar"><span class="ui__title">Who to hire</span></div>
+              <div class="ui-prompt"><span class="ui-prompt__label">What’s going wrong?</span><span class="ui-prompt__text" data-type="We keep reopening decisions we thought were settled.">We keep reopening decisions we thought were settled.</span></div>
+              <div class="ui-answer">
+                <span class="ui-answer__disc fill-y"></span>
+                <div><span class="ui-answer__k">Recommended profile</span><span class="ui-answer__v">Executor (Yellow)</span><span class="ui-answer__why">The team leans Visionary. Someone needs to close the option set at a fixed point.</span></div>
+              </div>
+              <p class="ui-note"><b>Before you hire</b>Check whether a reshuffle already covers it.</p>
+            </div>
+          </div>
+        </li>
+
+        <li class="feature" data-feature>
+          <button class="feature__head" type="button" aria-expanded="false" data-feature-btn>
+            <span class="feature__progress" aria-hidden="true"></span><span class="feature__name">Who to promote</span>
+          </button>
+          <div class="feature__body"><div class="feature__body-inner">
+            <p class="feature__lead">A readiness shortlist, with reasons.</p>
+            <p>Scored candidates with the reasons and the watchouts, plus the leadership track nobody on the team currently covers.</p>
+          </div></div>
+          <div class="feature__visual" aria-hidden="true">
+            <div class="fv-discs"><i class="fill-g" style="--s:340px;--r:-130px;--b:-150px;--from:translate(50px,50px)"></i><i class="fill-b" style="--s:200px;--l:-60px;--t:-80px;--from:translate(-40px,-40px)"></i></div>
+            <div class="ui">
+              <div class="ui__bar"><span class="ui__title">Promotion readiness</span></div>
+              <ul class="ui-short">
+                <li><span class="ava fill-g">A</span><span class="ui-short__meta"><b>Candidate A</b><small>Reason: owns quality end to end</small></span><span class="ui-bar"><i style="--w:.86"></i></span></li>
+                <li><span class="ava fill-y">B</span><span class="ui-short__meta"><b>Candidate B</b><small>Watchout: speed can outrun context</small></span><span class="ui-bar"><i style="--w:.72"></i></span></li>
+                <li><span class="ava fill-r">C</span><span class="ui-short__meta"><b>Candidate C</b><small>Reason: brings the room with them</small></span><span class="ui-bar"><i style="--w:.61"></i></span></li>
+              </ul>
+              <p class="ui-note ui-note--gap"><span class="ui-gapdisc"></span><b>Track uncovered</b>Visionary</p>
+            </div>
+          </div>
+        </li>
+
+        <li class="feature" data-feature>
+          <button class="feature__head" type="button" aria-expanded="false" data-feature-btn>
+            <span class="feature__progress" aria-hidden="true"></span><span class="feature__name">Composition &amp; what-if</span>
+          </button>
+          <div class="feature__body"><div class="feature__body-inner">
+            <p class="feature__lead">Simulate it before you commit to it.</p>
+            <p>A live balance score for every team and department, and a simulator for a hire, a move or a departure.</p>
+          </div></div>
+          <div class="feature__visual" aria-hidden="true">
+            <div class="fv-discs"><i class="fill-r" style="--s:300px;--l:-120px;--b:-130px;--from:translate(-50px,50px)"></i><i class="fill-b" style="--s:300px;--l:40px;--b:-190px;--from:translate(40px,60px)"></i></div>
+            <div class="ui">
+              <div class="ui__bar"><span class="ui__title">Composition</span></div>
+              <div class="ui-sim">
+                <div class="ui-sim__row"><span class="ui-sim__k">Now</span><span class="ui-comp"><i class="fill-y" style="flex-grow:4"></i><i class="fill-r" style="flex-grow:2"></i><i class="fill-g" style="flex-grow:1"></i></span><span class="ui-sim__v">52</span></div>
+                <div class="ui-sim__row is-sim"><span class="ui-sim__k">+1 Visionary</span><span class="ui-comp"><i class="fill-y" style="flex-grow:4"></i><i class="fill-r" style="flex-grow:2"></i><i class="fill-g" style="flex-grow:1"></i><i class="fill-b" style="flex-grow:1"></i></span><span class="ui-sim__v">67</span></div>
+              </div>
+              <div class="ui-seg"><span class="is-on">Hire</span><span>Move</span><span>Departure</span></div>
+              <p class="ui-note"><b>Balance +15</b>Same headcount problem, better shape.</p>
+            </div>
+          </div>
+        </li>
+
+        <li class="feature" data-feature>
+          <button class="feature__head" type="button" aria-expanded="false" data-feature-btn>
+            <span class="feature__progress" aria-hidden="true"></span><span class="feature__name">AI team insights</span>
+          </button>
+          <div class="feature__body"><div class="feature__body-inner">
+            <p class="feature__lead">Strengths, risks and recommendations, on demand.</p>
+            <p>Role-fit analysis for every person and a team-level read of strengths, risks and recommendations, regenerated whenever you ask.</p>
+          </div></div>
+          <div class="feature__visual" aria-hidden="true">
+            <div class="fv-discs"><i class="fill-y" style="--s:320px;--r:-110px;--t:-130px;--from:translate(50px,-40px)"></i><i class="fill-g" style="--s:240px;--r:40px;--t:-170px;--from:translate(60px,-60px)"></i></div>
+            <div class="ui">
+              <div class="ui__bar"><span class="ui__title">Team insights</span><span class="ui__btn">↻ Regenerate</span></div>
+              <div class="ui-ins">
+                <div><span class="ui-ins__k">Strengths</span><p>Delivery pace and follow-through.</p></div>
+                <div><span class="ui-ins__k">Risks</span><p>Commits before the problem is framed.</p></div>
+                <div><span class="ui-ins__k">Recommendations</span><p>Make one person own the problem statement.</p></div>
+              </div>
+              <div class="ui-fit"><span class="ava fill-y">D</span><span>Role fit</span><span class="ui-bar"><i style="--w:.8"></i></span></div>
+            </div>
+          </div>
+        </li>
+
+        <li class="feature" data-feature>
+          <button class="feature__head" type="button" aria-expanded="false" data-feature-btn>
+            <span class="feature__progress" aria-hidden="true"></span><span class="feature__name">Meeting intelligence</span>
+          </button>
+          <div class="feature__body"><div class="feature__body-inner">
+            <p class="feature__lead">Hear the colors in the room.</p>
+            <p>A bot joins the call, transcribes it, matches speakers to people and tags the conversation with RoleColor signals.</p>
+          </div></div>
+          <div class="feature__visual" aria-hidden="true">
+            <div class="fv-discs"><i class="fill-b" style="--s:360px;--l:-150px;--t:-120px;--from:translate(-60px,-30px)"></i><i class="fill-r" style="--s:200px;--r:-60px;--b:-60px;--from:translate(40px,40px)"></i></div>
+            <div class="ui">
+              <div class="ui__bar"><span class="ui__title"><span class="rec"></span>Weekly planning</span></div>
+              <ul class="ui-trans">
+                <li><span class="ava fill-b">E</span><p>What if the brief is the problem, not the build?</p><span class="sig">Reframing</span></li>
+                <li><span class="ava fill-y">F</span><p>Then v1 ships as scoped and the rest gets parked.</p><span class="sig">Sequencing</span></li>
+                <li><span class="ava fill-r">G</span><p>I can get the stakeholders on board today.</p><span class="sig">Buy-in</span></li>
+              </ul>
+            </div>
+          </div>
+        </li>
+
+        <li class="feature" data-feature>
+          <button class="feature__head" type="button" aria-expanded="false" data-feature-btn>
+            <span class="feature__progress" aria-hidden="true"></span><span class="feature__name">Hiring pipeline</span>
+          </button>
+          <div class="feature__body"><div class="feature__body-inner">
+            <p class="feature__lead">From posting to offer, scored against your team.</p>
+            <p>Job postings, a public careers page, candidate assessments, interview scheduling, question generation and offers. Every candidate is scored on whether they fill a gap, create friction or add something new.</p>
+          </div></div>
+          <div class="feature__visual" aria-hidden="true">
+            <div class="fv-discs"><i class="fill-g" style="--s:300px;--l:-110px;--b:-140px;--from:translate(-50px,50px)"></i><i class="fill-y" style="--s:300px;--r:-130px;--t:-120px;--from:translate(50px,-50px)"></i></div>
+            <div class="ui">
+              <div class="ui__bar"><span class="ui__title">Hiring pipeline</span></div>
+              <div class="ui-kanban">
+                <div><span class="ui-kanban__h">Assessed</span><span class="kcard"><i class="fill-b"></i>Fills a gap</span><span class="kcard"><i class="fill-y"></i>Adds friction</span></div>
+                <div><span class="ui-kanban__h">Interview</span><span class="kcard"><i class="fill-g"></i>Adds something new</span></div>
+                <div><span class="ui-kanban__h">Offer</span><span class="kcard kcard--moving"><i class="fill-b"></i>Fills a gap</span></div>
+              </div>
+            </div>
+          </div>
+        </li>
+
+        <li class="feature" data-feature>
+          <button class="feature__head" type="button" aria-expanded="false" data-feature-btn>
+            <span class="feature__progress" aria-hidden="true"></span><span class="feature__name">Slack &amp; ChatGPT</span>
+          </button>
+          <div class="feature__body"><div class="feature__body-inner">
+            <p class="feature__lead">Ask where you already work.</p>
+            <p>Look up a teammate’s profile or your team’s balance with a slash command in Slack, or query it from a custom GPT.</p>
+          </div></div>
+          <div class="feature__visual" aria-hidden="true">
+            <div class="fv-discs"><i class="fill-r" style="--s:320px;--r:-120px;--b:-140px;--from:translate(50px,50px)"></i><i class="fill-y" style="--s:180px;--l:-50px;--t:-50px;--from:translate(-40px,-40px)"></i></div>
+            <div class="ui">
+              <div class="ui__bar"><span class="ui__title"># product-team</span></div>
+              <div class="ui-chat">
+                <p class="ui-chat__q">What’s our team balance?</p>
+                <div class="ui-chat__a">
+                  <span class="ui-chat__mark"><i class="fill-y"></i><i class="fill-r"></i><i class="fill-g"></i><i class="fill-b"></i></span>
+                  <div><b>Balance 52/100</b><span>Execution-heavy · no Visionary</span><span class="ui-comp ui-comp--sm"><i class="fill-y" style="flex-grow:4"></i><i class="fill-r" style="flex-grow:2"></i><i class="fill-g" style="flex-grow:1"></i></span></div>
+                </div>
+                <p class="ui-chat__input"><span>/</span> Look up a teammate or your team</p>
+              </div>
+            </div>
+          </div>
+        </li>
+      </ol>
+    </div>
+
+    <div class="platform__more reveal">
+      <p>Also in the platform: a private branded portal on your own domain, bulk import and Google Workspace sync, 25- or 50-question assessments per employee, and a Team Program with group workshops, role mapping and a 12-week implementation plan.</p>
+      <div class="platform__cta">
+        <p class="price"><span class="price__from">From</span><span class="price__n">$12</span><span class="price__per">per member per month, billed monthly</span></p>
+        <a class="btn btn--ink" href="https://app.apollo.io/#/meet/sales">Book a demo
+          <svg class="mixglyph" viewBox="0 0 30 16" aria-hidden="true" focusable="false"><circle cx="8" cy="8" r="6.5"/><circle cx="22" cy="8" r="6.5"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ SCIENCE ============================ -->
+<section class="science" id="science" aria-labelledby="science-title">
+  <div class="container">
+    <div class="science__top">
+      <div>
+        <h2 class="h2" id="science-title" data-split>Leadership isn’t a fixed identity.</h2>
+      </div>
+      <div class="science__text reveal">
+        <p class="science__big">It’s adapting your strengths to what a team needs at each stage.</p>
+        <p>RoleColor is designed around Bruce Tuckman’s stages of team development, combined with organizational-psychology research on contextual and adaptive leadership. The method is patent pending.</p>
+      </div>
+    </div>
+
+    <ol class="stages" data-stages>
+      <li class="stage">
+        <svg class="stage__svg" viewBox="0 0 120 120" aria-hidden="true" focusable="false">
+          <circle r="20" cx="0" cy="0" class="fill-y" style="--x:60px;--y:24px;--s:.8"/><circle r="20" cx="0" cy="0" class="fill-r" style="--x:96px;--y:60px;--s:.8"/><circle r="20" cx="0" cy="0" class="fill-g" style="--x:60px;--y:96px;--s:.8"/><circle r="20" cx="0" cy="0" class="fill-b" style="--x:24px;--y:60px;--s:.8"/>
+        </svg>
+        <h3 class="stage__name">Forming</h3><p class="stage__d">Building connection</p>
+      </li>
+      <li class="stage">
+        <svg class="stage__svg" viewBox="0 0 120 120" aria-hidden="true" focusable="false">
+          <circle r="20" cx="0" cy="0" class="fill-y" style="--x:44px;--y:50px;--s:1.05"/><circle r="20" cx="0" cy="0" class="fill-r" style="--x:70px;--y:40px;--s:1"/><circle r="20" cx="0" cy="0" class="fill-g" style="--x:58px;--y:72px;--s:.95"/><circle r="20" cx="0" cy="0" class="fill-b" style="--x:94px;--y:88px;--s:.85"/>
+        </svg>
+        <h3 class="stage__name">Storming</h3><p class="stage__d">Navigating friction</p>
+      </li>
+      <li class="stage">
+        <svg class="stage__svg" viewBox="0 0 120 120" aria-hidden="true" focusable="false">
+          <circle r="20" cx="0" cy="0" class="fill-y" style="--x:41px;--y:41px;--s:.95"/><circle r="20" cx="0" cy="0" class="fill-r" style="--x:79px;--y:41px;--s:.95"/><circle r="20" cx="0" cy="0" class="fill-g" style="--x:79px;--y:79px;--s:.95"/><circle r="20" cx="0" cy="0" class="fill-b" style="--x:41px;--y:79px;--s:.95"/>
+        </svg>
+        <h3 class="stage__name">Norming</h3><p class="stage__d">Establishing flow</p>
+      </li>
+      <li class="stage">
+        <svg class="stage__svg" viewBox="0 0 120 120" aria-hidden="true" focusable="false">
+          <circle r="20" cx="0" cy="0" class="fill-y" style="--x:50px;--y:50px;--s:1.15"/><circle r="20" cx="0" cy="0" class="fill-r" style="--x:70px;--y:50px;--s:1.15"/><circle r="20" cx="0" cy="0" class="fill-g" style="--x:70px;--y:70px;--s:1.15"/><circle r="20" cx="0" cy="0" class="fill-b" style="--x:50px;--y:70px;--s:1.15"/>
+        </svg>
+        <h3 class="stage__name">Performing</h3><p class="stage__d">Reaching peak productivity</p>
+      </li>
+      <li class="stage">
+        <svg class="stage__svg" viewBox="0 0 120 120" aria-hidden="true" focusable="false">
+          <circle class="stage__ring" cx="60" cy="60" r="38"/>
+          <circle r="20" cx="0" cy="0" class="fill-y" style="--x:20px;--y:20px;--s:.55"/><circle r="20" cx="0" cy="0" class="fill-r" style="--x:100px;--y:20px;--s:.55"/><circle r="20" cx="0" cy="0" class="fill-g" style="--x:100px;--y:100px;--s:.55"/><circle r="20" cx="0" cy="0" class="fill-b" style="--x:20px;--y:100px;--s:.55"/>
+        </svg>
+        <h3 class="stage__name">Adjourning</h3><p class="stage__d">Ending with clarity</p>
+      </li>
+    </ol>
+
+    <p class="science__cite reveal"><span>Four stages: Tuckman (1965), <i>Psychological Bulletin</i> 63(6), 384–399.</span> <span>Adjourning added: Tuckman &amp; Jensen (1977), <i>Group &amp; Organization Studies</i> 2(4), 419–427.</span></p>
+  </div>
+</section>
+
+<!-- ============================ VOICES ============================ -->
+<!-- CLIENT TO CONFIRM: the three testimonials below come from the original site and are unverified.
+     Please confirm each quote, name and title (and permission to publish) before launch. -->
+<section class="voices" id="voices" aria-label="What people say">
+  <div class="container">
+    <figure class="quote quote--lead reveal">
+      <blockquote><p>“The insights were sharp, practical, and immediately actionable. This isn’t a personality quiz. It’s a decision tool.”</p></blockquote>
+      <figcaption><span class="quote__disc" aria-hidden="true"><i class="fill-b"></i><i class="fill-y"></i></span><span><b>Priya Malhotra</b>Senior Product Analyst</span></figcaption>
+    </figure>
+    <div class="quotes">
+      <figure class="quote reveal">
+        <blockquote><p>“RCF gave us instant clarity on roles and execution gaps. It saved weeks of trial-and-error.”</p></blockquote>
+        <figcaption><span class="quote__disc" aria-hidden="true"><i class="fill-y"></i><i class="fill-g"></i></span><span><b>Aaron Whitcombe</b>Operations Manager</span></figcaption>
+      </figure>
+      <figure class="quote reveal">
+        <blockquote><p>“Loved the simplicity and effectiveness of the test. It was engaging and focused only on leadership, which was interesting. I was quite intrigued by the accuracy of the results.”</p></blockquote>
+        <figcaption><span class="quote__disc" aria-hidden="true"><i class="fill-r"></i><i class="fill-b"></i></span><span><b>Divakar Vijayasarathy</b>Founder &amp; CEO, DVS Advisory Group</span></figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ FAQ ============================ -->
+<section class="faq" id="faq" aria-labelledby="faq-title">
+  <div class="container faq__grid">
+    <div class="faq__intro">
+      <h2 class="h2" id="faq-title" data-split>Asked often, answered plainly.</h2>
+      <p class="faq__contact reveal">Something else? Write to <a href="mailto:contact@rolecolorfinder.com">contact@rolecolorfinder.com</a>. We respond within 1 business day.</p>
+    </div>
+    <div class="faq__list" data-faq>
+      <details class="qa">
+        <summary><span>What is RoleColorFinder, and how is it different from a personality test?</span><span class="qa__icon" aria-hidden="true"></span></summary>
+        <div class="qa__a"><p>It’s a patent-pending assessment platform built on real group psychology, specifically Tuckman’s stages of team development. Static personality tests describe you in isolation. RoleColorFinder shows how your style adapts across team contexts and stages, and maps what happens between pairs of people.</p></div>
+      </details>
+      <details class="qa">
+        <summary><span>How long does the assessment take?</span><span class="qa__icon" aria-hidden="true"></span></summary>
+        <div class="qa__a"><p>The free assessment is 10 questions and takes about four minutes. Premium goes deeper with 25 questions, and the Pro Deep Dive with 50.</p></div>
+      </details>
+      <details class="qa">
+        <summary><span>Can my whole team take it?</span><span class="qa__icon" aria-hidden="true"></span></summary>
+        <div class="qa__a"><p>Yes. Everyone can take an individual assessment, or you can run the Team Program: group workshops, role mapping and a 12-week implementation plan.</p></div>
+      </details>
+      <details class="qa">
+        <summary><span>What does it cost?</span><span class="qa__icon" aria-hidden="true"></span></summary>
+        <div class="qa__a"><p>The basic assessment is free. Premium is $124.99 and the Pro Deep Dive is $199.99, both one-time payments. Teams start at $12 per member per month.</p></div>
+      </details>
+      <details class="qa">
+        <summary><span>How do I get started?</span><span class="qa__icon" aria-hidden="true"></span></summary>
+        <div class="qa__a"><p>Take the free assessment. Your results appear immediately, in full.</p></div>
+      </details>
+      <details class="qa">
+        <summary><span>Is there science behind it?</span><span class="qa__icon" aria-hidden="true"></span></summary>
+        <div class="qa__a"><p>Yes. It’s built on Tuckman’s stages of group development together with research on contextual and adaptive leadership.</p></div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ FINAL CTA ============================ -->
+<section class="finale" id="start" aria-labelledby="finale-title">
+  <div class="container">
+    <div class="finale__panel" data-finale>
+      <svg class="finale__svg" viewBox="0 0 600 600" aria-hidden="true" focusable="false">
+        <circle data-fd="0" class="fill-y" cx="250" cy="250" r="160"/>
+        <circle data-fd="1" class="fill-r" cx="350" cy="250" r="160"/>
+        <circle data-fd="2" class="fill-g" cx="350" cy="350" r="160"/>
+        <circle data-fd="3" class="fill-b" cx="250" cy="350" r="160"/>
+      </svg>
+      <div class="finale__copy">
+        <h2 class="finale__title" id="finale-title" data-split>A color only means something next to the other colors in the room.</h2>
+        <div class="finale__paths">
+          <div class="path reveal">
+            <h3 class="path__t">For you</h3>
+            <p class="path__d">Find out how you actually show up at work. Ten questions, about four minutes, free and without a card. Your full report appears immediately.</p>
+            <a class="btn btn--light" href="assessment.html">Take the free assessment <span class="btn__arrow" aria-hidden="true">→</span></a>
+          </div>
+          <div class="path reveal">
+            <h3 class="path__t">For your team</h3>
+            <p class="path__d">See how your team breaks before it does. From $12 per member per month, billed monthly. Book a 20-minute call to walk through it.</p>
+            <a class="btn btn--outline-light" href="https://app.apollo.io/#/meet/sales">Book a demo <span class="btn__arrow" aria-hidden="true">→</span></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ============================ FOOTER ============================ -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer__top">
+      <div class="footer__brand">
+        <a class="brand" href="index.html" aria-label="RoleColorFinder home">
+          <svg class="brand__mark" viewBox="0 0 32 32" aria-hidden="true" focusable="false">
+            <circle cx="12" cy="12" r="7.6" class="bm bm--y"/><circle cx="20" cy="12" r="7.6" class="bm bm--r"/><circle cx="20" cy="20" r="7.6" class="bm bm--g"/><circle cx="12" cy="20" r="7.6" class="bm bm--b"/>
+          </svg>
+          <span class="brand__word">RoleColorFinder</span>
+        </a>
+        <p class="footer__blurb">Team-dynamics software built on a patent-pending leadership assessment. Built by a team spanning education, psychology, engineering and organizational design.</p>
+        <p class="footer__mail"><a href="mailto:contact@rolecolorfinder.com">contact@rolecolorfinder.com</a></p>
+      </div>
+      <nav class="footer__cols" aria-label="Footer">
+        <div>
+          <h2 class="footer__h">Assessments</h2>
+          <ul>
+            <li><a href="assessment.html">Free assessment</a></li>
+            <li><a href="pricing.html#premium">Premium report</a></li>
+            <li><a href="pricing.html#pro">Pro Deep Dive</a></li>
+            <li><a href="signin.html">Career Finder</a></li>
+          </ul>
+        </div>
+        <div>
+          <h2 class="footer__h">Teams</h2>
+          <ul>
+            <li><a href="teams.html">RoleColor for Teams</a></li>
+            <li><a href="pricing.html#teams">Team pricing</a></li>
+            <li><a href="https://app.apollo.io/#/meet/sales">Book a demo</a></li>
+          </ul>
+        </div>
+        <div>
+          <h2 class="footer__h">Company</h2>
+          <ul>
+            <li><a href="about.html">About</a></li>
+            <li><a href="team.html">Team</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h2 class="footer__h">Legal</h2>
+          <ul>
+            <li><a href="privacy.html">Privacy policy</a></li>
+            <li><a href="terms.html">Terms of service</a></li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+    <div class="footer__bottom">
+      <span>© 2026 RoleColorFinder</span>
+      <span>Patent pending</span>
+    </div>
+  </div>
+  <div class="footer__horizon" aria-hidden="true"><span class="fill-y"></span><span class="fill-r"></span><span class="fill-g"></span><span class="fill-b"></span></div>
+</footer>
+
+<script src="main.js"></script>
+</body>
+</html>

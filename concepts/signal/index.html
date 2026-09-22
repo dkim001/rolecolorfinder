@@ -1,0 +1,843 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>RoleColorFinder · Know how your team breaks before it does</title>
+  <meta name="description" content="RoleColorFinder maps every working relationship on your team, names the friction before it costs you a quarter, and tells you which profile to hire next. Free assessment: 10 questions, about 4 minutes, no card.">
+  <meta name="theme-color" content="#0A0B0D">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <script>
+    /* Progressive enhancement: hidden start states only apply under .js.
+       If main.js never reports in, drop the class so nothing stays hidden. */
+    document.documentElement.classList.add('js');
+    setTimeout(function () { if (!window.__signalReady) document.documentElement.classList.remove('js'); }, 3500);
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=JetBrains+Mono:wght@400;500&display=swap">
+  <link rel="stylesheet" href="style.css">
+  <script src="main.js" defer></script>
+</head>
+<body>
+
+<svg class="sprite" aria-hidden="true" focusable="false">
+  <symbol id="mark" viewBox="0 0 32 32">
+    <path d="M16 4.5 27.5 16 16 27.5 4.5 16Z" fill="none" stroke="currentColor" stroke-opacity=".42" stroke-width="1.4"/>
+    <path d="M16 4.5V27.5" stroke="#FF4D3D" stroke-width="2.4"/>
+    <circle cx="16" cy="4.5" r="3.6" fill="#FFC940"/>
+    <circle cx="27.5" cy="16" r="3.6" fill="#FF5A4A"/>
+    <circle cx="16" cy="27.5" r="3.6" fill="#4D8DFF"/>
+    <circle cx="4.5" cy="16" r="3.6" fill="#37D67A"/>
+  </symbol>
+  <symbol id="arrow" viewBox="0 0 16 16"><path d="M1 8h13M9 3l5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.6"/></symbol>
+  <symbol id="arrow-out" viewBox="0 0 16 16"><path d="M4 12 12 4M5 4h7v7" fill="none" stroke="currentColor" stroke-width="1.6"/></symbol>
+</svg>
+
+<a class="skip" href="#main">Skip to content</a>
+
+<!-- ============================ NAV ============================ -->
+<header class="nav" data-nav>
+  <div class="nav__inner">
+    <a class="logo" href="index.html" aria-label="RoleColorFinder home">
+      <svg class="logo__mark" aria-hidden="true"><use href="#mark"/></svg>
+      <span class="logo__word">RoleColor<span>Finder</span></span>
+    </a>
+    <nav class="nav__links" aria-label="Primary">
+      <a href="teams.html">For teams</a>
+      <a href="assessment.html">Assessment</a>
+      <a href="pricing.html">Pricing</a>
+      <a href="about.html">About</a>
+    </nav>
+    <div class="nav__actions">
+      <a class="nav__signin" href="signin.html">Sign in</a>
+      <a class="btn btn--ghost btn--sm" href="https://app.apollo.io/#/meet/sales" target="_blank" rel="noopener">Book a demo</a>
+      <a class="btn btn--primary btn--sm" href="assessment.html">Get started</a>
+    </div>
+    <button class="nav__toggle" type="button" aria-expanded="false" aria-controls="menu" data-menu-toggle>
+      <span class="sr-only">Menu</span>
+      <span class="nav__toggle-lines" aria-hidden="true"><i></i><i></i></span>
+    </button>
+  </div>
+
+  <div class="menu" id="menu" data-menu>
+    <div class="menu__grid" aria-hidden="true"></div>
+    <nav class="menu__links" aria-label="Mobile">
+      <a href="teams.html"><span class="mono">01</span>For teams</a>
+      <a href="assessment.html"><span class="mono">02</span>Assessment</a>
+      <a href="pricing.html"><span class="mono">03</span>Pricing</a>
+      <a href="about.html"><span class="mono">04</span>About</a>
+      <a href="signin.html"><span class="mono">05</span>Sign in</a>
+    </nav>
+    <div class="menu__foot">
+      <a class="btn btn--primary" href="assessment.html">Get started <svg class="i" aria-hidden="true"><use href="#arrow"/></svg></a>
+      <a class="btn btn--ghost" href="https://app.apollo.io/#/meet/sales" target="_blank" rel="noopener">Book a demo</a>
+      <p class="mono menu__note">Free assessment · 10 questions · about 4 minutes · no card</p>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- ============================ HERO ============================ -->
+<section class="hero" aria-labelledby="hero-title">
+  <div class="colgrid" aria-hidden="true"></div>
+  <div class="hero__inner">
+    <div class="hero__copy">
+      <p class="kicker mono" data-hero-in><span class="kicker__tick" aria-hidden="true"></span>RoleColor™ for Teams</p>
+      <h1 class="hero__title" id="hero-title">
+        <span class="line"><span>Know how</span></span>
+        <span class="line"><span>your team</span></span>
+        <span class="line"><span><span class="fracture" data-text="breaks">breaks</span> before</span></span>
+        <span class="line"><span>it does.</span></span>
+      </h1>
+      <p class="hero__lede" data-hero-in>RoleColorFinder maps every working relationship on your team, names the friction before it costs you a quarter, and tells you which profile to hire next.</p>
+      <div class="hero__ctas" data-hero-in>
+        <a class="btn btn--primary btn--lg" href="teams.html">See it on your team <svg class="i" aria-hidden="true"><use href="#arrow"/></svg></a>
+        <a class="btn btn--ghost btn--lg" href="assessment.html">Take the free assessment</a>
+      </div>
+      <p class="hero__note mono" data-hero-in>
+        <span>Free</span><span>10 questions</span><span>About 4 minutes</span><span>No card</span>
+      </p>
+    </div>
+
+    <figure class="scan" data-scan data-hero-in>
+      <div class="scan__bar mono">
+        <span class="scan__title"><span class="scan__rec" aria-hidden="true"></span>Friction scan <span class="scan__path">/ sample team</span></span>
+        <span class="scan__status" data-scan-status aria-hidden="true">5 high-friction pairs flagged</span>
+      </div>
+      <div class="scan__stage" data-scan-stage>
+        <img class="scan__still" src="network-still.svg" alt="" width="696" height="547">
+        <canvas class="scan__canvas" aria-hidden="true"></canvas>
+        <div class="scan__callouts" aria-hidden="true" data-scan-callouts></div>
+        <span class="corner corner--tl" aria-hidden="true"></span><span class="corner corner--tr" aria-hidden="true"></span>
+        <span class="corner corner--bl" aria-hidden="true"></span><span class="corner corner--br" aria-hidden="true"></span>
+        <ul class="scan__legend mono" aria-hidden="true">
+          <li><i class="edge edge--high"></i>High friction</li>
+          <li><i class="edge edge--medium"></i>Watch closely</li>
+          <li><i class="edge edge--low"></i>Low</li>
+        </ul>
+      </div>
+      <figcaption class="scan__readout">
+        <span class="sr-only">A sample team of 14 people: 5 Executors, 3 Motivators, 4 Architects and 2 Visionaries, connected by the 22 pairs who actually work together. The scan flags 5 high-friction pairs, including a Direction trap between an Executor and a Visionary, a Speed trap between a Motivator and an Architect, and an Authority clash between a Motivator and a Visionary.</span>
+        <dl class="readout" aria-hidden="true">
+          <div><dt>People</dt><dd data-count="14">14</dd></div>
+          <div><dt>Pairs mapped</dt><dd data-count="22">22</dd></div>
+          <div class="readout--high"><dt>High friction</dt><dd data-count="5">5</dd></div>
+          <div class="readout--medium"><dt>Watch closely</dt><dd data-count="8">8</dd></div>
+          <div><dt>Balance</dt><dd><span data-count="81">81</span><small>/100</small></dd></div>
+        </dl>
+      </figcaption>
+    </figure>
+  </div>
+
+  <div class="specs" aria-label="RoleColorFinder at a glance">
+    <div class="specs__inner">
+      <div class="spec"><b data-count="4" data-pad="2">04</b><span>RoleColor profiles</span></div>
+      <div class="spec"><b data-count="10">10</b><span>pairings, each with a name and a fix</span></div>
+      <div class="spec"><b data-count="5" data-pad="2">05</b><span>stages of team development</span></div>
+      <div class="spec"><b data-count="10">10</b><span>questions, about 4 minutes</span></div>
+      <div class="spec"><b>$0</b><span>for the assessment. No card.</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ 01 IDEA ============================ -->
+<section class="section idea" id="idea" aria-labelledby="idea-title">
+  <div class="wrap">
+    <div class="sechead" data-reveal>
+      <span class="sechead__index mono">01</span><span class="sechead__name mono">The idea</span>
+    </div>
+    <div class="idea__top">
+      <h2 class="h2" id="idea-title" data-reveal><span class="h2__dim">Every personality test stops at the person.</span> We keep going.</h2>
+      <p class="lede" data-reveal>Most teams don’t fail from a lack of talent. They fail from how they work together. Knowing your color is step one. Knowing what it does to the people around you is the point.</p>
+    </div>
+
+    <ol class="levels">
+      <li class="level" data-reveal data-draw>
+        <div class="level__viz" aria-hidden="true">
+          <svg viewBox="0 0 320 200">
+            <g class="rings" fill="none" stroke="#23262D">
+              <circle cx="92" cy="100" r="30"/><circle cx="92" cy="100" r="52"/><circle cx="92" cy="100" r="74"/>
+            </g>
+            <circle class="pop" cx="92" cy="100" r="14" fill="#FFC940"/>
+            <text class="glyph" x="92" y="104.5">E</text>
+            <g class="bars mono-svg">
+              <text x="196" y="62">EXE</text><rect class="bar" x="228" y="54" width="72" height="9" fill="#FFC940"/>
+              <text x="196" y="90">ARC</text><rect class="bar" x="228" y="82" width="50" height="9" fill="#37D67A"/>
+              <text x="196" y="118">MOT</text><rect class="bar" x="228" y="110" width="34" height="9" fill="#FF5A4A"/>
+              <text x="196" y="146">VIS</text><rect class="bar" x="228" y="138" width="16" height="9" fill="#4D8DFF"/>
+            </g>
+          </svg>
+        </div>
+        <p class="level__index mono">Level 1</p>
+        <h3 class="h3">The person</h3>
+        <p>Your RoleColor is your default way of leading, deciding and working with people. Your report ranks all four colors, not just the winner. Useful, and also where most tools stop.</p>
+      </li>
+      <li class="level" data-reveal data-draw>
+        <div class="level__viz" aria-hidden="true">
+          <svg viewBox="0 0 320 200">
+            <line class="draw hot" x1="72" y1="120" x2="248" y2="80" pathLength="1"/>
+            <circle class="pop" cx="72" cy="120" r="14" fill="#FFC940"/><text class="glyph" x="72" y="124.5">E</text>
+            <circle class="pop pop--2" cx="248" cy="80" r="14" fill="#4D8DFF"/><text class="glyph" x="248" y="84.5">V</text>
+            <g class="tag">
+              <rect x="104" y="140" width="152" height="26" fill="#0A0B0D" stroke="#FF4D3D"/>
+              <text class="mono-svg" x="114" y="157.5" fill="#E9E9EC">DIRECTION TRAP · HIGH</text>
+            </g>
+          </svg>
+        </div>
+        <p class="level__index mono">Level 2</p>
+        <h3 class="h3">The pair</h3>
+        <p>Where friction actually lives. Two good people with different thresholds for “ready” can stall a project without either one doing anything wrong.</p>
+      </li>
+      <li class="level" data-reveal data-draw>
+        <div class="level__viz" aria-hidden="true">
+          <svg viewBox="0 0 320 200">
+            <g fill="none" stroke-width="1.4">
+              <line class="draw" x1="60" y1="70" x2="138" y2="42" pathLength="1" stroke="#3A3F48"/>
+              <line class="draw hot" x1="138" y1="42" x2="176" y2="112" pathLength="1"/>
+              <line class="draw warn" x1="60" y1="70" x2="100" y2="146" pathLength="1"/>
+              <line class="draw" x1="100" y1="146" x2="176" y2="112" pathLength="1" stroke="#3A3F48"/>
+              <line class="draw warn" x1="176" y1="112" x2="252" y2="60" pathLength="1"/>
+              <line class="draw hot" x1="176" y1="112" x2="258" y2="150" pathLength="1"/>
+              <line class="draw" x1="252" y1="60" x2="258" y2="150" pathLength="1" stroke="#3A3F48"/>
+              <line class="draw" x1="138" y1="42" x2="252" y2="60" pathLength="1" stroke="#3A3F48"/>
+            </g>
+            <circle class="pop" cx="60" cy="70" r="10" fill="#37D67A"/>
+            <circle class="pop" cx="138" cy="42" r="10" fill="#FFC940"/>
+            <circle class="pop" cx="100" cy="146" r="10" fill="#37D67A"/>
+            <circle class="pop pop--2" cx="176" cy="112" r="10" fill="#4D8DFF"/>
+            <circle class="pop pop--2" cx="252" cy="60" r="10" fill="#FFC940"/>
+            <circle class="pop pop--2" cx="258" cy="150" r="10" fill="#FF5A4A"/>
+          </svg>
+        </div>
+        <p class="level__index mono">Level 3</p>
+        <h3 class="h3">The team</h3>
+        <p>Every working relationship, mapped and ranked by risk, with the fix for each one and the profile that would close the gap.</p>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- ============================ 02 FRICTION ENGINE ============================ -->
+<section class="section friction" id="friction" aria-labelledby="friction-title">
+  <div class="wrap">
+    <div class="sechead" data-reveal>
+      <span class="sechead__index mono">02</span><span class="sechead__name mono">Friction engine</span>
+      <span class="sechead__aside mono">Live · 10 pairings</span>
+    </div>
+    <div class="split">
+      <h2 class="h2" id="friction-title" data-reveal>Pick any two. See exactly where they break.</h2>
+      <p class="lede" data-reveal>Four profiles make ten pairings. Each has a name, a failure mode and a fix. This isn’t a mockup: it’s the same engine running inside the product.</p>
+    </div>
+
+    <div class="fe panel" data-fe data-reveal>
+      <div class="panel__bar mono">
+        <span>pairing_lookup</span>
+        <span class="panel__bar-right" data-fe-code>Executor × Visionary</span>
+      </div>
+      <div class="fe__body">
+        <div class="fe__input">
+          <fieldset class="picker" data-slot="a">
+            <legend class="mono">First person</legend>
+            <div class="picker__opts">
+              <label class="chip" data-color="Yellow"><input type="radio" name="fe-a" value="Yellow" checked><span><i class="dot" aria-hidden="true">E</i>Executor</span></label>
+              <label class="chip" data-color="Red"><input type="radio" name="fe-a" value="Red"><span><i class="dot" aria-hidden="true">M</i>Motivator</span></label>
+              <label class="chip" data-color="Green"><input type="radio" name="fe-a" value="Green"><span><i class="dot" aria-hidden="true">A</i>Architect</span></label>
+              <label class="chip" data-color="Blue"><input type="radio" name="fe-a" value="Blue"><span><i class="dot" aria-hidden="true">V</i>Visionary</span></label>
+            </div>
+          </fieldset>
+          <fieldset class="picker" data-slot="b">
+            <legend class="mono">Second person</legend>
+            <div class="picker__opts">
+              <label class="chip" data-color="Yellow"><input type="radio" name="fe-b" value="Yellow"><span><i class="dot" aria-hidden="true">E</i>Executor</span></label>
+              <label class="chip" data-color="Red"><input type="radio" name="fe-b" value="Red"><span><i class="dot" aria-hidden="true">M</i>Motivator</span></label>
+              <label class="chip" data-color="Green"><input type="radio" name="fe-b" value="Green"><span><i class="dot" aria-hidden="true">A</i>Architect</span></label>
+              <label class="chip" data-color="Blue"><input type="radio" name="fe-b" value="Blue" checked><span><i class="dot" aria-hidden="true">V</i>Visionary</span></label>
+            </div>
+          </fieldset>
+
+          <div class="fe__graph" aria-hidden="true">
+            <svg viewBox="0 0 400 380" data-fe-graph>
+              <g class="fe-loops">
+                <path data-pair="Yellow-Yellow" class="fe-edge risk-low" d="M188 52 C150 -8 250 -8 212 52"/>
+                <path data-pair="Red-Red" class="fe-edge risk-low" d="M348 178 C408 140 408 240 348 202"/>
+                <path data-pair="Blue-Blue" class="fe-edge risk-low" d="M188 328 C150 388 250 388 212 328"/>
+                <path data-pair="Green-Green" class="fe-edge risk-low" d="M52 178 C-8 140 -8 240 52 202"/>
+              </g>
+              <g class="fe-lines">
+                <line data-pair="Red-Yellow" class="fe-edge risk-medium" x1="200" y1="70" x2="330" y2="190"/>
+                <line data-pair="Blue-Red" class="fe-edge risk-high" x1="330" y1="190" x2="200" y2="310"/>
+                <line data-pair="Blue-Green" class="fe-edge risk-medium" x1="200" y1="310" x2="70" y2="190"/>
+                <line data-pair="Green-Yellow" class="fe-edge risk-medium" x1="70" y1="190" x2="200" y2="70"/>
+                <line data-pair="Blue-Yellow" class="fe-edge risk-high is-on" x1="200" y1="70" x2="200" y2="310"/>
+                <line data-pair="Green-Red" class="fe-edge risk-high" x1="70" y1="190" x2="330" y2="190"/>
+              </g>
+              <g class="fe-pulse"><circle r="4.5" data-fe-pulse cx="200" cy="70"/></g>
+              <g class="fe-nodes">
+                <g class="fe-node is-on" data-node="Yellow" transform="translate(200 70)"><circle r="21" fill="#FFC940"/><text y="5">E</text><text class="fe-label" x="34" y="-10" text-anchor="start">Executor</text></g>
+                <g class="fe-node" data-node="Red" transform="translate(330 190)"><circle r="21" fill="#FF5A4A"/><text y="5">M</text><text class="fe-label" y="46">Motivator</text></g>
+                <g class="fe-node is-on" data-node="Blue" transform="translate(200 310)"><circle r="21" fill="#4D8DFF"/><text y="5">V</text><text class="fe-label" x="34" y="22" text-anchor="start">Visionary</text></g>
+                <g class="fe-node" data-node="Green" transform="translate(70 190)"><circle r="21" fill="#37D67A"/><text y="5">A</text><text class="fe-label" y="46">Architect</text></g>
+              </g>
+            </svg>
+          </div>
+        </div>
+
+        <div class="fe__out" data-fe-out>
+          <p class="fe__pair mono" data-fe-pairlabel>Executor × Visionary</p>
+          <h3 class="fe__name" data-fe-name>Direction trap</h3>
+          <div class="risk" data-fe-risk data-risk="high">
+            <span class="risk__meter" aria-hidden="true"><i></i><i></i><i></i></span>
+            <span class="risk__label mono" data-fe-risklabel>High friction</span>
+          </div>
+          <p class="fe__summary" data-fe-summary>Blue keeps expanding the horizon while Yellow wants a stable target and a sequence to execute.</p>
+          <p class="fe__why" data-fe-why>Blue often improves the idea while Yellow is already trying to ship it. Each person experiences the other as either premature closure or endless drift.</p>
+          <div class="fe__cols">
+            <div class="fe__col fe__col--good">
+              <h4 class="mono">Good at together</h4>
+              <ul data-fe-list="strengths">
+                <li>This pair can turn bold ideas into real execution when handoffs are explicit.</li>
+                <li>Blue helps Yellow avoid narrow thinking; Yellow helps Blue avoid vapor.</li>
+                <li>They are strong in zero-to-one work that still needs disciplined delivery.</li>
+              </ul>
+            </div>
+            <div class="fe__col fe__col--bad">
+              <h4 class="mono">Where it breaks</h4>
+              <ul data-fe-list="watchouts">
+                <li>Priorities can keep changing once Yellow has already committed resources.</li>
+                <li>Blue may feel constrained too early, while Yellow feels rework piling up.</li>
+                <li>Trust drops when promise dates move without a shared reset.</li>
+              </ul>
+            </div>
+            <div class="fe__col fe__col--fix">
+              <h4 class="mono">What to do</h4>
+              <ol data-fe-list="actions">
+                <li>Separate idea generation from execution commitment in the workflow.</li>
+                <li>Agree on the version that is shipping now versus ideas parked for later.</li>
+                <li>Use written change logs when scope shifts.</li>
+              </ol>
+            </div>
+          </div>
+          <p class="sr-only" aria-live="polite" data-fe-live></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ 03 TEAM BUILDER ============================ -->
+<section class="section builder" id="builder" aria-labelledby="builder-title">
+  <div class="wrap">
+    <div class="sechead" data-reveal>
+      <span class="sechead__index mono">03</span><span class="sechead__name mono">Team builder</span>
+      <span class="sechead__aside mono">Hire the gap</span>
+    </div>
+    <div class="split">
+      <h2 class="h2" id="builder-title" data-reveal>Hiring, backwards.</h2>
+      <p class="lede" data-reveal>Most teams hire a résumé. Hire the gap instead. A team of brilliant Executors still misses what nobody in the room is built to see. Change the mix and the cost of the gap gets named.</p>
+    </div>
+
+    <div class="tb" data-tb data-reveal>
+      <div class="panel tb__team">
+        <div class="panel__bar mono"><span>team_composition</span><span class="panel__bar-right"><span data-tb-total>7</span> people · balance <span data-tb-mini>52</span></span></div>
+        <div class="tb__steppers">
+          <div class="stepper" data-color="Yellow">
+            <span class="stepper__who"><i class="dot" aria-hidden="true">E</i><span><b>Executor</b><small class="mono">Yellow</small></span></span>
+            <div class="stepper__ctl">
+              <button type="button" class="stepper__btn" data-step="-1" aria-label="Remove one Executor">−</button>
+              <output class="stepper__val" data-tb-val aria-label="Executors">4</output>
+              <button type="button" class="stepper__btn" data-step="1" aria-label="Add one Executor">+</button>
+            </div>
+          </div>
+          <div class="stepper" data-color="Red">
+            <span class="stepper__who"><i class="dot" aria-hidden="true">M</i><span><b>Motivator</b><small class="mono">Red</small></span></span>
+            <div class="stepper__ctl">
+              <button type="button" class="stepper__btn" data-step="-1" aria-label="Remove one Motivator">−</button>
+              <output class="stepper__val" data-tb-val aria-label="Motivators">2</output>
+              <button type="button" class="stepper__btn" data-step="1" aria-label="Add one Motivator">+</button>
+            </div>
+          </div>
+          <div class="stepper" data-color="Green">
+            <span class="stepper__who"><i class="dot" aria-hidden="true">A</i><span><b>Architect</b><small class="mono">Green</small></span></span>
+            <div class="stepper__ctl">
+              <button type="button" class="stepper__btn" data-step="-1" aria-label="Remove one Architect">−</button>
+              <output class="stepper__val" data-tb-val aria-label="Architects">1</output>
+              <button type="button" class="stepper__btn" data-step="1" aria-label="Add one Architect">+</button>
+            </div>
+          </div>
+          <div class="stepper" data-color="Blue">
+            <span class="stepper__who"><i class="dot" aria-hidden="true">V</i><span><b>Visionary</b><small class="mono">Blue</small></span></span>
+            <div class="stepper__ctl">
+              <button type="button" class="stepper__btn" data-step="-1" aria-label="Remove one Visionary">−</button>
+              <output class="stepper__val" data-tb-val aria-label="Visionaries">0</output>
+              <button type="button" class="stepper__btn" data-step="1" aria-label="Add one Visionary">+</button>
+            </div>
+          </div>
+        </div>
+        <div class="tb__graph" aria-hidden="true">
+          <canvas data-tb-canvas></canvas>
+          <p class="tb__graph-key mono"><i class="edge edge--high"></i>High-friction pair <i class="edge edge--low"></i>Other pair</p>
+        </div>
+        <button type="button" class="tb__reset mono" data-tb-reset>Reset to 4 · 2 · 1 · 0</button>
+      </div>
+
+      <div class="panel tb__read">
+        <div class="panel__bar mono"><span>readout</span><span class="panel__bar-right">same engine as the product</span></div>
+        <div class="tb__kpis">
+          <div class="kpi kpi--score">
+            <p class="kpi__label mono">Balance score</p>
+            <p class="kpi__big"><span data-tb-score data-value="52" aria-hidden="true">52</span><small>/100</small><span class="kpi__delta mono" data-tb-delta aria-hidden="true"></span></p>
+            <div class="meter" aria-hidden="true"><div class="meter__fill" data-tb-meter style="--v:.52"></div></div>
+          </div>
+          <div class="kpi">
+            <p class="kpi__label mono">High-friction pairs</p>
+            <p class="kpi__mid" data-tb-high aria-hidden="true">2</p>
+          </div>
+          <p class="sr-only" aria-live="polite" data-tb-live>Balance score 52 out of 100. 2 high-friction pairs.</p>
+        </div>
+        <p class="tb__summary" data-tb-summary>57% Executor: execution-heavy. This group will move fast and close things out, but is likely to commit before the problem is fully framed and to under-invest in the structure that keeps it from recurring.</p>
+
+        <div class="tb__cols">
+          <div class="tb__next">
+            <h3 class="mono tb__h">One hire from now</h3>
+            <ul class="deltas" data-tb-deltas>
+              <li data-color="Yellow"><span class="deltas__who"><i class="dot" aria-hidden="true">E</i>+1 Executor</span><span class="deltas__bar" aria-hidden="true"><i style="--d:-2"></i></span><span class="deltas__val mono">50 <em>−2</em></span></li>
+              <li data-color="Red"><span class="deltas__who"><i class="dot" aria-hidden="true">M</i>+1 Motivator</span><span class="deltas__bar" aria-hidden="true"><i style="--d:-2"></i></span><span class="deltas__val mono">50 <em>−2</em></span></li>
+              <li data-color="Green"><span class="deltas__who"><i class="dot" aria-hidden="true">A</i>+1 Architect</span><span class="deltas__bar" aria-hidden="true"><i style="--d:15"></i></span><span class="deltas__val mono">67 <em>+15</em></span></li>
+              <li data-color="Blue" class="is-best"><span class="deltas__who"><i class="dot" aria-hidden="true">V</i>+1 Visionary</span><span class="deltas__bar" aria-hidden="true"><i style="--d:15"></i></span><span class="deltas__val mono">67 <em>+15</em></span></li>
+            </ul>
+            <div class="besthire">
+              <p class="mono">Best next hire</p>
+              <p class="besthire__val" data-tb-best>Visionary (new angles, reframing, and future-state thinking)</p>
+            </div>
+          </div>
+          <div class="tb__cost">
+            <h3 class="mono tb__h">What this costs you</h3>
+            <ul class="insights" data-tb-insights>
+              <li class="insight" data-level="medium">
+                <p class="insight__level mono">Watch</p>
+                <h4>Execution-heavy</h4>
+                <p>This group will move fast and close things out, but is likely to commit before the problem is fully framed and to under-invest in the structure that keeps it from recurring.</p>
+                <p class="insight__fix"><span class="mono">Fix</span>Add Architect (Green) capability, or make one person accountable for the problem statement before work starts.</p>
+              </li>
+              <li class="insight" data-level="medium">
+                <p class="insight__level mono">Watch</p>
+                <h4>No Visionary</h4>
+                <p>Nobody is naturally questioning the framing. This team will execute the plan it was given, including when the plan is wrong.</p>
+                <p class="insight__fix"><span class="mono">Fix</span>Hire or move in a Blue, or bring an outside perspective into planning.</p>
+              </li>
+              <li class="insight" data-level="medium">
+                <p class="insight__level mono">Watch</p>
+                <h4>2 high-friction pairs</h4>
+                <p>Speed trap × 2. Red wants to move now and Green wants to understand the system before committing.</p>
+                <p class="insight__fix"><span class="mono">Fix</span>Create a short discovery window, then a hard decision window.</p>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <p class="footnote mono" data-reveal>Inside the portal this runs against your real roster, and you can simulate a hire, a transfer or a departure before you make it.</p>
+  </div>
+</section>
+
+<!-- ============================ 04 PLATFORM ============================ -->
+<section class="section platform" id="platform" aria-labelledby="platform-title">
+  <div class="wrap">
+    <div class="sechead" data-reveal>
+      <span class="sechead__index mono">04</span><span class="sechead__name mono">The platform</span>
+      <span class="sechead__aside mono">RoleColor™ for Teams</span>
+    </div>
+    <div class="split">
+      <h2 class="h2" id="platform-title" data-reveal>The assessment is the front door. Not the product.</h2>
+      <p class="lede" data-reveal>Once everyone on the team has a color, the platform turns it into decisions: which pairs will clash, who to hire, who is ready to lead, and what changes when someone moves.</p>
+    </div>
+
+    <div class="bento">
+      <!-- 1 Friction Map -->
+      <article class="cell cell--map" data-reveal>
+        <header class="cell__head"><span class="mono">01</span><h3>Friction Map</h3></header>
+        <p class="cell__text">Every pairing on your team, ranked by risk. Built from the pairs that actually work together, based on overlapping functions rather than everyone against everyone, with the fix for each one.</p>
+        <div class="viz fmap" aria-hidden="true">
+          <div class="fmap__head mono"><span>Pair</span><span>Pattern</span><span>Risk</span><span>Fix</span></div>
+          <div class="fmap__row" style="--i:0"><span class="pairdots"><i class="dot dot--y">E</i><i class="dot dot--b">V</i></span><b>Direction trap</b><span class="tagrisk tagrisk--high mono">High</span><span class="fmap__fix">Separate idea generation from execution commitment.</span></div>
+          <div class="fmap__row" style="--i:1"><span class="pairdots"><i class="dot dot--r">M</i><i class="dot dot--g">A</i></span><b>Speed trap</b><span class="tagrisk tagrisk--high mono">High</span><span class="fmap__fix">A short discovery window, then a hard decision window.</span></div>
+          <div class="fmap__row" style="--i:2"><span class="pairdots"><i class="dot dot--r">M</i><i class="dot dot--b">V</i></span><b>Authority clash</b><span class="tagrisk tagrisk--high mono">High</span><span class="fmap__fix">Set a clear decision owner before the meeting starts.</span></div>
+          <div class="fmap__row" style="--i:3"><span class="pairdots"><i class="dot dot--y">E</i><i class="dot dot--r">M</i></span><b>Pace trap</b><span class="tagrisk tagrisk--medium mono">Watch</span><span class="fmap__fix">Agree which decisions are still fluid and which are fixed.</span></div>
+          <div class="fmap__row" style="--i:4"><span class="pairdots"><i class="dot dot--y">E</i><i class="dot dot--g">A</i></span><b>Precision trap</b><span class="tagrisk tagrisk--medium mono">Watch</span><span class="fmap__fix">Define what must be perfect and what can iterate.</span></div>
+          <div class="fmap__row" style="--i:5"><span class="pairdots"><i class="dot dot--g">A</i><i class="dot dot--g">A</i></span><b>Architect mirror pair</b><span class="tagrisk tagrisk--low mono">Low</span><span class="fmap__fix">Run a brief pre-mortem on shared assumptions.</span></div>
+        </div>
+      </article>
+
+      <!-- 2 Who to hire -->
+      <article class="cell cell--hire" data-reveal>
+        <header class="cell__head"><span class="mono">02</span><h3>Who to hire</h3></header>
+        <p class="cell__text">Describe the problem in plain language and get back the role and the color, weighed against your real composition. It will tell you not to hire when the answer is a reshuffle.</p>
+        <div class="viz ask" data-typer>
+          <p class="ask__label mono" aria-hidden="true">Describe the problem <span>Example</span></p>
+          <div class="ask__input" aria-hidden="true"><span data-typer-text>We ship fast, then fix the same problems twice.</span><i class="caret"></i></div>
+          <div class="ask__answer" data-typer-answer>
+            <p class="ask__role"><i class="dot dot--g" aria-hidden="true">A</i><span><b data-typer-role>Architect</b> <span class="mono" data-typer-color>Green</span></span></p>
+            <p class="ask__why" data-typer-why>Your team is execution-heavy. Add structure before you add speed, or make one person accountable for the problem statement before work starts.</p>
+          </div>
+        </div>
+      </article>
+
+      <!-- 3 Who to promote -->
+      <article class="cell cell--promote" data-reveal>
+        <header class="cell__head"><span class="mono">03</span><h3>Who to promote</h3></header>
+        <p class="cell__text">A scored readiness shortlist with reasons and watchouts, and which leadership track is still uncovered.</p>
+        <div class="viz promote" aria-hidden="true">
+          <p class="viz__tag mono">Example data</p>
+          <div class="promote__row"><i class="dot dot--y">E</i><span class="promote__bar"><i style="--w:.86"></i></span><b class="mono">86</b></div>
+          <div class="promote__row"><i class="dot dot--g">A</i><span class="promote__bar"><i style="--w:.74"></i></span><b class="mono">74</b></div>
+          <div class="promote__row"><i class="dot dot--r">M</i><span class="promote__bar"><i style="--w:.61"></i></span><b class="mono">61</b></div>
+          <p class="promote__gap mono"><i class="promote__flag"></i>1 leadership track uncovered</p>
+        </div>
+      </article>
+
+      <!-- 4 Composition -->
+      <article class="cell cell--whatif" data-reveal>
+        <header class="cell__head"><span class="mono">04</span><h3>Composition &amp; what-if</h3></header>
+        <p class="cell__text">A live balance score for every team and department. Simulate a hire, a move or a departure before anyone signs anything.</p>
+        <div class="viz whatif" aria-hidden="true">
+          <div class="whatif__row"><span class="mono">Now</span><span class="whatif__bar"><i style="--w:.52"></i></span><b class="mono">52</b></div>
+          <div class="whatif__row is-up"><span class="mono">Hire a Visionary</span><span class="whatif__bar"><i style="--w:.67"></i></span><b class="mono">67</b></div>
+          <div class="whatif__row"><span class="mono">An Executor leaves</span><span class="whatif__bar"><i style="--w:.56"></i></span><b class="mono">56</b></div>
+        </div>
+      </article>
+
+      <!-- 5 AI insights -->
+      <article class="cell cell--ai" data-reveal>
+        <header class="cell__head"><span class="mono">05</span><h3>AI team insights</h3></header>
+        <p class="cell__text">Role-fit analysis for every person, plus team-level strengths, risks and recommendations. Regenerated on demand.</p>
+        <div class="viz ai" data-ai>
+          <dl class="ai__list" data-ai-list>
+            <div><dt class="mono">Strength</dt><dd>Moves fast and closes things out.</dd></div>
+            <div><dt class="mono">Risk</dt><dd>Commits before the problem is fully framed.</dd></div>
+            <div><dt class="mono">Do next</dt><dd>Make one person own the problem statement.</dd></div>
+          </dl>
+          <button type="button" class="ai__btn mono" data-ai-btn><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M13.5 8A5.5 5.5 0 1 1 11.9 4.1M13.5 2v3.5H10" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>Regenerate</button>
+        </div>
+      </article>
+
+      <!-- 6 Meeting intelligence -->
+      <article class="cell cell--meet" data-reveal>
+        <header class="cell__head"><span class="mono">06</span><h3>Meeting intelligence</h3></header>
+        <p class="cell__text">A bot joins the call, transcribes it, matches each speaker to a person and tags the conversation with RoleColor signals.</p>
+        <div class="viz meet" aria-hidden="true">
+          <div class="meet__wave" data-wave></div>
+          <ul class="meet__lines">
+            <li><i class="dot dot--b">V</i><span>Are we sure this is the right problem?</span><em class="mono">reframing</em></li>
+            <li><i class="dot dot--y">E</i><span>Fine. What ships on Friday?</span><em class="mono">sequencing</em></li>
+            <li><i class="dot dot--r">M</i><span>Let’s get the team behind it first.</span><em class="mono">buy-in</em></li>
+          </ul>
+        </div>
+      </article>
+
+      <!-- 7 Hiring pipeline -->
+      <article class="cell cell--pipe" data-reveal>
+        <header class="cell__head"><span class="mono">07</span><h3>Hiring pipeline</h3></header>
+        <p class="cell__text">Job postings, a public careers page, candidate assessments, interview scheduling, question generation and offers.</p>
+        <div class="viz pipe" aria-hidden="true">
+          <div class="pipe__col"><span class="mono">Posted</span><i class="dot dot--y"></i><i class="dot dot--b"></i><i class="dot dot--g"></i><i class="dot dot--r"></i></div>
+          <div class="pipe__col"><span class="mono">Assessed</span><i class="dot dot--b"></i><i class="dot dot--g"></i><i class="dot dot--y"></i></div>
+          <div class="pipe__col"><span class="mono">Interview</span><i class="dot dot--b"></i><i class="dot dot--g"></i></div>
+          <div class="pipe__col"><span class="mono">Offer</span><i class="dot dot--b pipe__go"></i></div>
+        </div>
+      </article>
+
+      <!-- 8 Slack & ChatGPT -->
+      <article class="cell cell--chat" data-reveal>
+        <header class="cell__head"><span class="mono">08</span><h3>Slack &amp; ChatGPT</h3></header>
+        <p class="cell__text">Look up a teammate’s profile or the team’s balance with a slash command, or ask a custom GPT.</p>
+        <div class="viz chat" aria-hidden="true">
+          <p class="chat__q"><span class="mono">/</span>team balance</p>
+          <p class="chat__a"><b class="mono">52/100</b> Execution-heavy. No Visionary on this team.</p>
+        </div>
+      </article>
+    </div>
+
+    <div class="also" data-reveal>
+      <p class="also__title mono">Also in the box</p>
+      <ul class="also__list">
+        <li>Private branded portal on your domain</li>
+        <li>Admin dashboard and user management</li>
+        <li>25- or 50-question assessments per employee</li>
+        <li>Bulk import and Google Workspace sync</li>
+        <li>Candidate scoring against team composition</li>
+        <li>Task-to-profile matching (AI Work Matrix)</li>
+        <li>Role clarity reports and leadership plans</li>
+        <li>Scheduled re-assessment reminders</li>
+        <li>Onboarding and dedicated support</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ 05 PROFILES ============================ -->
+<section class="section profiles" id="profiles" aria-labelledby="profiles-title">
+  <div class="wrap">
+    <div class="sechead" data-reveal>
+      <span class="sechead__index mono">05</span><span class="sechead__name mono">The four profiles</span>
+    </div>
+    <div class="split">
+      <h2 class="h2" id="profiles-title" data-reveal>Four profiles. None of them is the good one.</h2>
+      <p class="lede" data-reveal>Color describes how people work, not how well. Each profile is the reason someone is exceptional at part of the job and genuinely hard work in another. Reports rank all four, not just the winner.</p>
+    </div>
+
+    <div class="profile-grid">
+      <article class="profile" data-color="Yellow" data-reveal>
+        <div class="profile__trace" aria-hidden="true"><svg viewBox="0 0 600 80" preserveAspectRatio="none"><path d="M0 60 H20 V20 H50 V60 H70 V20 H100 V60 H120 V20 H150 V60 H170 V20 H200 V60 H220 V20 H250 V60 H270 V20 H300 V60 H320 V20 H350 V60 H370 V20 H400 V60 H420 V20 H450 V60 H470 V20 H500 V60 H520 V20 H550 V60 H570 V20 H600 V60"/></svg></div>
+        <p class="profile__color mono"><i class="dot" aria-hidden="true">E</i>Yellow</p>
+        <h3 class="profile__name">The Executor</h3>
+        <p class="profile__line">Closes the gap between deciding and doing. The person a stalled project gets handed to.</p>
+        <dl class="profile__facts">
+          <div><dt class="mono">Optimizes for</dt><dd>Clear priorities, ownership and delivery</dd></div>
+          <div><dt class="mono">Blind spot</dt><dd>Speed can outrun context</dd></div>
+          <div><dt class="mono">Brings</dt><dd>Follow-through, sequencing, accountability</dd></div>
+          <div><dt class="mono">Common among</dt><dd>Founders, builders, PMs</dd></div>
+        </dl>
+        <p class="profile__cadence mono">Cadence: clear handoffs, rapid execution loops</p>
+      </article>
+
+      <article class="profile" data-color="Red" data-reveal>
+        <div class="profile__trace" aria-hidden="true"><svg viewBox="0 0 600 80" preserveAspectRatio="none"><path d="M0 40 C7 18 13 18 20 40 S33 62 40 40 S53 12 60 40 S73 68 80 40 S93 18 100 40 S113 62 120 40 S133 12 140 40 S153 68 160 40 S173 18 180 40 S193 62 200 40 S213 12 220 40 S233 68 240 40 S253 18 260 40 S273 62 280 40 S293 12 300 40 S313 62 320 40 S333 18 340 40 S353 62 360 40 S373 12 380 40 S393 68 400 40 S413 18 420 40 S433 62 440 40 S453 12 460 40 S473 68 480 40 S493 18 500 40 S513 62 520 40 S533 12 540 40 S553 68 560 40 S573 18 580 40 S593 62 600 40"/></svg></div>
+        <p class="profile__color mono"><i class="dot" aria-hidden="true">M</i>Red</p>
+        <h3 class="profile__name">The Motivator</h3>
+        <p class="profile__line">Moves people first and plans second. Makes a team believe the work is worth doing.</p>
+        <dl class="profile__facts">
+          <div><dt class="mono">Optimizes for</dt><dd>People momentum, alignment and visible energy</dd></div>
+          <div><dt class="mono">Blind spot</dt><dd>Optimism can outrun structure</dd></div>
+          <div><dt class="mono">Brings</dt><dd>Social energy, urgency, buy-in</dd></div>
+          <div><dt class="mono">Common among</dt><dd>Speakers, creatives, brand builders</dd></div>
+        </dl>
+        <p class="profile__cadence mono">Cadence: live discussion, fast relational feedback</p>
+      </article>
+
+      <article class="profile" data-color="Green" data-reveal>
+        <div class="profile__trace" aria-hidden="true"><svg viewBox="0 0 600 80" preserveAspectRatio="none"><path d="M0 60 H40 L50 50 H80 L90 40 H120 L130 30 H160 L170 20 H200 L210 60 H240 L250 50 H280 L290 40 H320 L330 30 H360 L370 20 H400 L410 60 H440 L450 50 H480 L490 40 H520 L530 30 H560 L570 20 H600"/></svg></div>
+        <p class="profile__color mono"><i class="dot" aria-hidden="true">A</i>Green</p>
+        <h3 class="profile__name">The Architect</h3>
+        <p class="profile__line">Builds the structure everyone else quietly relies on. Wants order that survives scrutiny.</p>
+        <dl class="profile__facts">
+          <div><dt class="mono">Optimizes for</dt><dd>Logic, quality and durable systems</dd></div>
+          <div><dt class="mono">Blind spot</dt><dd>Analysis can delay commitment</dd></div>
+          <div><dt class="mono">Brings</dt><dd>Rigor, precision, thoughtful tradeoffs</dd></div>
+          <div><dt class="mono">Common among</dt><dd>Analysts, engineers, operators</dd></div>
+        </dl>
+        <p class="profile__cadence mono">Cadence: time to think, validate and refine</p>
+      </article>
+
+      <article class="profile" data-color="Blue" data-reveal>
+        <div class="profile__trace" aria-hidden="true"><svg viewBox="0 0 600 80" preserveAspectRatio="none"><path d="M0 40 C25 4 50 4 75 40 S110 76 135 58 S160 30 175 40 S190 48 200 40 C225 4 250 4 275 40 S310 76 335 58 S360 30 375 40 S390 48 400 40 C425 4 450 4 475 40 S510 76 535 58 S560 30 575 40 S590 48 600 40"/></svg></div>
+        <p class="profile__color mono"><i class="dot" aria-hidden="true">V</i>Blue</p>
+        <h3 class="profile__name">The Visionary</h3>
+        <p class="profile__line">Questions the problem before solving it. Reliably asks the thing nobody else asked.</p>
+        <dl class="profile__facts">
+          <div><dt class="mono">Optimizes for</dt><dd>Possibility, pattern recognition and innovation</dd></div>
+          <div><dt class="mono">Blind spot</dt><dd>Ideas can drift without a landing zone</dd></div>
+          <div><dt class="mono">Brings</dt><dd>New angles, reframing, future-state thinking</dd></div>
+          <div><dt class="mono">Common among</dt><dd>Strategists, designers, researchers</dd></div>
+        </dl>
+        <p class="profile__cadence mono">Cadence: wide exploration before narrowing</p>
+      </article>
+    </div>
+    <p class="profiles__cta" data-reveal><a class="textlink" href="assessment.html">Find your color in about four minutes <svg class="i" aria-hidden="true"><use href="#arrow"/></svg></a></p>
+  </div>
+</section>
+
+<!-- ============================ 06 SCIENCE ============================ -->
+<section class="section science" id="science" aria-labelledby="science-title">
+  <div class="wrap">
+    <div class="sechead" data-reveal>
+      <span class="sechead__index mono">06</span><span class="sechead__name mono">The science</span>
+      <span class="sechead__aside mono stamp">Patent pending</span>
+    </div>
+    <div class="split">
+      <h2 class="h2" id="science-title" data-reveal>Leadership isn’t a fixed identity.</h2>
+      <div data-reveal>
+        <p class="lede">It’s adapting your strengths to what a team needs at each stage. RoleColorFinder is designed around Bruce Tuckman’s stages of team development, combined with organizational-psychology research on contextual and adaptive leadership.</p>
+        <p class="lede lede--muted">Built by a multidisciplinary team spanning education, psychology, engineering and organizational design.</p>
+      </div>
+    </div>
+
+    <div class="stages" data-stages data-reveal>
+      <svg class="stages__signal" viewBox="0 0 1000 120" preserveAspectRatio="none" aria-hidden="true">
+        <path class="stages__base" d="M0 60 H1000"/>
+        <path class="stages__line" pathLength="1" d="M0 60 C20 52 40 68 60 60 S100 52 120 60 S160 68 200 60 C212 30 222 96 234 44 S252 104 266 26 S284 110 298 34 S316 92 330 40 S350 84 366 52 S384 72 400 60 C430 50 460 72 490 58 S540 50 570 60 S590 62 600 60 C620 34 640 34 660 60 S700 86 720 60 S760 34 780 60 S800 76 800 60 C830 56 860 64 890 60 S940 58 1000 60"/>
+      </svg>
+      <ol class="stages__list">
+        <li><span class="mono">01</span><b>Forming</b><span>Building connection</span></li>
+        <li class="is-hot"><span class="mono">02</span><b>Storming</b><span>Navigating friction</span></li>
+        <li><span class="mono">03</span><b>Norming</b><span>Establishing flow</span></li>
+        <li><span class="mono">04</span><b>Performing</b><span>Reaching peak productivity</span></li>
+        <li><span class="mono">05</span><b>Adjourning</b><span>Ending with clarity</span></li>
+      </ol>
+    </div>
+    <div class="cites mono" data-reveal>
+      <p>Tuckman (1965). Psychological Bulletin 63(6), 384–399. Forming, storming, norming, performing.</p>
+      <p>Tuckman &amp; Jensen (1977). Group &amp; Organization Studies 2(4), 419–427. Adds adjourning.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ 07 VOICES ============================ -->
+<!-- CLIENT TO CONFIRM: the three testimonials below come from the original site and are unverified.
+     Confirm names, titles and permission before launch. -->
+<section class="section voices" id="voices" aria-labelledby="voices-title">
+  <div class="wrap">
+    <div class="sechead" data-reveal>
+      <span class="sechead__index mono">07</span><span class="sechead__name mono">In their words</span>
+    </div>
+    <h2 class="h2 voices__title" id="voices-title" data-reveal>Straight from the people who used it.</h2>
+    <div class="quotes">
+      <figure class="quote" data-reveal>
+        <blockquote><p>The insights were sharp, practical, and immediately actionable. This isn’t a personality quiz. It’s a decision tool.</p></blockquote>
+        <figcaption><b>Priya Malhotra</b><span class="mono">Senior Product Analyst</span></figcaption>
+      </figure>
+      <figure class="quote" data-reveal>
+        <blockquote><p>RCF gave us instant clarity on roles and execution gaps. It saved weeks of trial-and-error.</p></blockquote>
+        <figcaption><b>Aaron Whitcombe</b><span class="mono">Operations Manager</span></figcaption>
+      </figure>
+      <figure class="quote" data-reveal>
+        <blockquote><p>Loved the simplicity and effectiveness of the test. It was engaging and focused only on leadership, which was interesting. I was quite intrigued by the accuracy of the results.</p></blockquote>
+        <figcaption><b>Divakar Vijayasarathy</b><span class="mono">Founder &amp; CEO, DVS Advisory Group</span></figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ 08 FAQ ============================ -->
+<section class="section faq" id="faq" aria-labelledby="faq-title">
+  <div class="wrap faq__wrap">
+    <div class="faq__intro">
+      <div class="sechead" data-reveal>
+        <span class="sechead__index mono">08</span><span class="sechead__name mono">Questions</span>
+      </div>
+      <h2 class="h2" id="faq-title" data-reveal>Plain answers.</h2>
+      <p class="lede" data-reveal>Anything else goes to <a class="textlink" href="mailto:contact@rolecolorfinder.com">contact@rolecolorfinder.com</a>. We respond within 1 business day.</p>
+    </div>
+    <div class="accordion" data-accordion data-reveal>
+      <details class="acc">
+        <summary><span class="mono">Q1</span>What is RoleColorFinder, and how is it different?<i aria-hidden="true"></i></summary>
+        <div class="acc__body"><p>A patent-pending assessment platform built on real group psychology: Bruce Tuckman’s stages of team development. Static personality tests describe a person in isolation. RoleColorFinder shows how your style adapts across team contexts and stages, and maps what happens between pairs of people.</p></div>
+      </details>
+      <details class="acc">
+        <summary><span class="mono">Q2</span>How long does it take?<i aria-hidden="true"></i></summary>
+        <div class="acc__body"><p>The free assessment is 10 questions and takes about four minutes. Premium is 25 questions and Pro Deep Dive is 50.</p></div>
+      </details>
+      <details class="acc">
+        <summary><span class="mono">Q3</span>Can my whole team take it?<i aria-hidden="true"></i></summary>
+        <div class="acc__body"><p>Yes. Everyone can take an individual assessment, or you can run the Team Program: group workshops, role mapping and a 12-week implementation plan.</p></div>
+      </details>
+      <details class="acc">
+        <summary><span class="mono">Q4</span>What does it cost?<i aria-hidden="true"></i></summary>
+        <div class="acc__body"><p>The basic assessment is free. Premium is $124.99 and Pro Deep Dive is $199.99, both one-time payments with no hidden fees. Teams start at $12 per member per month.</p></div>
+      </details>
+      <details class="acc">
+        <summary><span class="mono">Q5</span>How do I get started?<i aria-hidden="true"></i></summary>
+        <div class="acc__body"><p>Take the free assessment. Your results appear immediately, in full, not as a locked preview.</p></div>
+      </details>
+      <details class="acc">
+        <summary><span class="mono">Q6</span>Is there science behind it?<i aria-hidden="true"></i></summary>
+        <div class="acc__body"><p>Yes. It’s built on Tuckman’s stages of team development and on organizational-psychology research into contextual and adaptive leadership.</p></div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ 09 CTA ============================ -->
+<section class="cta" id="start" aria-labelledby="cta-title">
+  <div class="colgrid" aria-hidden="true"></div>
+  <div class="wrap">
+    <h2 class="cta__title" id="cta-title" data-reveal data-draw>Start with one person.<span class="tglyph tglyph--one" aria-hidden="true"><svg viewBox="0 0 60 60"><circle class="tglyph__ring" cx="30" cy="30" r="22"/><circle class="pop" cx="30" cy="30" r="13" fill="#FFC940"/></svg></span><br>Or the whole room.<span class="tglyph tglyph--team" aria-hidden="true"><svg viewBox="0 0 150 60"><g fill="none" stroke-width="2.5"><line class="draw" pathLength="1" x1="14" y1="40" x2="52" y2="14" stroke="#454A54"/><line class="draw hot" pathLength="1" x1="52" y1="14" x2="84" y2="44"/><line class="draw" pathLength="1" x1="14" y1="40" x2="84" y2="44" stroke="#454A54"/><line class="draw" pathLength="1" x1="84" y1="44" x2="136" y2="30" stroke="#454A54"/><line class="draw hot" pathLength="1" x1="104" y1="10" x2="136" y2="30"/><line class="draw" pathLength="1" x1="52" y1="14" x2="104" y2="10" stroke="#454A54"/></g><circle class="pop" cx="14" cy="40" r="8" fill="#37D67A"/><circle class="pop" cx="52" cy="14" r="8" fill="#FFC940"/><circle class="pop pop--2" cx="84" cy="44" r="8" fill="#4D8DFF"/><circle class="pop pop--2" cx="104" cy="10" r="8" fill="#FF5A4A"/><circle class="pop pop--2" cx="136" cy="30" r="8" fill="#37D67A"/></svg></span></h2>
+    <div class="cta__grid">
+      <div class="cta__card" data-reveal>
+        <p class="mono cta__for">For you</p>
+        <h3>Find out how you actually show up at work.</h3>
+        <p>Ten questions across five dimensions. Your full report appears the moment you finish: no card, no trial that converts.</p>
+        <a class="btn btn--primary btn--lg" href="assessment.html">Take the free assessment <svg class="i" aria-hidden="true"><use href="#arrow"/></svg></a>
+        <p class="mono cta__note">Free · 10 questions · about 4 minutes</p>
+      </div>
+      <div class="cta__card cta__card--team" data-reveal>
+        <p class="mono cta__for">For your team</p>
+        <h3>Map every working relationship.</h3>
+        <p>RoleColor™ for Teams starts at <b>$12 per member per month</b>, billed monthly. Book a 20-minute call and see it on your own team.</p>
+        <div class="cta__btns">
+          <a class="btn btn--primary btn--lg" href="https://app.apollo.io/#/meet/sales" target="_blank" rel="noopener">Book a demo <svg class="i" aria-hidden="true"><use href="#arrow-out"/></svg></a>
+          <a class="btn btn--ghost btn--lg" href="teams.html">See it on your team</a>
+        </div>
+        <p class="mono cta__note">Volume discounts for 50+ seats</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ============================ FOOTER ============================ -->
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer__top">
+      <div class="footer__brand">
+        <a class="logo" href="index.html" aria-label="RoleColorFinder home">
+          <svg class="logo__mark" aria-hidden="true"><use href="#mark"/></svg>
+          <span class="logo__word">RoleColor<span>Finder</span></span>
+        </a>
+        <p>Know how your team breaks before it does.</p>
+        <ul class="footer__mail mono">
+          <li><a href="mailto:contact@rolecolorfinder.com">contact@rolecolorfinder.com</a></li>
+          <li><a href="mailto:sales@rolecolorfinder.com">sales@rolecolorfinder.com</a></li>
+          <li><a href="mailto:support@rolecolorfinder.com">support@rolecolorfinder.com</a></li>
+        </ul>
+      </div>
+      <nav class="footer__cols" aria-label="Footer">
+        <div>
+          <h2 class="mono">Assessments</h2>
+          <ul>
+            <li><a href="assessment.html">Free assessment</a></li>
+            <li><a href="pricing.html">Premium</a></li>
+            <li><a href="pricing.html">Pro Deep Dive</a></li>
+            <li><a href="pricing.html">Pricing</a></li>
+          </ul>
+        </div>
+        <div>
+          <h2 class="mono">Teams</h2>
+          <ul>
+            <li><a href="teams.html">For teams</a></li>
+                        <li><a href="https://app.apollo.io/#/meet/sales" target="_blank" rel="noopener">Book a demo</a></li>
+          </ul>
+        </div>
+        <div>
+          <h2 class="mono">Company</h2>
+          <ul>
+            <li><a href="about.html">About</a></li>
+            <li><a href="team.html">Team</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="signin.html">Sign in</a></li>
+          </ul>
+        </div>
+        <div>
+          <h2 class="mono">Legal</h2>
+          <ul>
+            <li><a href="privacy.html">Privacy</a></li>
+            <li><a href="terms.html">Terms</a></li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+    <div class="footer__sig" aria-hidden="true">
+      <svg viewBox="0 0 1360 60" preserveAspectRatio="none"><path d="M0 30 H300 C320 30 330 8 345 8 S365 52 380 52 S400 30 420 30 H560 C575 30 580 14 592 14 S606 46 618 46 S630 30 640 30 H1360"/></svg>
+    </div>
+    <div class="footer__base mono">
+      <span>© 2026 RoleColorFinder</span>
+      <span>Patent pending</span>
+      <span>We respond within 1 business day</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
